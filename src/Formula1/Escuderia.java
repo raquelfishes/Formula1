@@ -60,7 +60,7 @@ public class Escuderia {
     }
     
     public String toString(){
-        return "   Identificador: " + identificador + " Nombre: " + nombre + " Pais: " + pais + 
+        return "Identificador: " + identificador + " Nombre: " + nombre + " Pais: " + pais + 
                 " Año Fundacion: " + anyoFundacion + " Presupuesto: " + presupuesto + " FPuntos Mundial: " + puntosMundial +"\n";
     }
     

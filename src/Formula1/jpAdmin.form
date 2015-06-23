@@ -143,9 +143,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir Escuderia"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAnyadirEscuderiaActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="bModificarEscuderia">
               <Properties>
@@ -154,9 +151,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Modificar Escuderia"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bModificarEscuderiaActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="bBorrarEscuderia">
               <Properties>

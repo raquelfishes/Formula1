@@ -57,34 +57,27 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="410" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jPanel2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="jPanel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
                           <Component id="Accion" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanel4" max="32767" attributes="0"/>
+                              <Component id="jPanel2" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
+              <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -127,10 +120,10 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="bConsultarEscuderia" min="-2" max="-2" attributes="0"/>
-                          <Component id="bConsultarEscuderia1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bInfoEscuderia" min="-2" max="-2" attributes="0"/>
+                          <Component id="bElegirPilotoyCoche" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="62" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -138,36 +131,30 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="bConsultarEscuderia" min="-2" max="-2" attributes="0"/>
+                      <Component id="bInfoEscuderia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bConsultarEscuderia1" min="-2" max="-2" attributes="0"/>
+                      <Component id="bElegirPilotoyCoche" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="bConsultarEscuderia">
+            <Component class="javax.swing.JRadioButton" name="bInfoEscuderia">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Informacion"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bConsultarEscuderiaActionPerformed"/>
-              </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="bConsultarEscuderia1">
+            <Component class="javax.swing.JRadioButton" name="bElegirPilotoyCoche">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Elegir coche y piloto para mundial"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bConsultarEscuderia1ActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -186,10 +173,10 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="bAnyadirPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="bModificarPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="bBorrarPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="bConsultarPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bDescartarPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFicharPilotoLibre" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFicharPilotoOtra" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bInercambioPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -197,19 +184,19 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="bAnyadirPiloto" min="-2" max="-2" attributes="0"/>
+                      <Component id="bDescartarPiloto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bModificarPiloto" min="-2" max="-2" attributes="0"/>
+                      <Component id="bFicharPilotoLibre" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bBorrarPiloto" min="-2" max="-2" attributes="0"/>
+                      <Component id="bFicharPilotoOtra" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bConsultarPiloto" min="-2" max="-2" attributes="0"/>
+                      <Component id="bInercambioPiloto" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="bAnyadirPiloto">
+            <Component class="javax.swing.JRadioButton" name="bDescartarPiloto">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
@@ -217,7 +204,7 @@
                 <Property name="text" type="java.lang.String" value="Descartar piloto"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="bModificarPiloto">
+            <Component class="javax.swing.JRadioButton" name="bFicharPilotoLibre">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
@@ -225,7 +212,7 @@
                 <Property name="text" type="java.lang.String" value="Fichar piloto libre"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="bBorrarPiloto">
+            <Component class="javax.swing.JRadioButton" name="bFicharPilotoOtra">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
@@ -233,7 +220,7 @@
                 <Property name="text" type="java.lang.String" value="Fichar piloto de otra escuderia"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="bConsultarPiloto">
+            <Component class="javax.swing.JRadioButton" name="bInercambioPiloto">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
@@ -258,10 +245,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="bAnyadirCircuito" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="bModificarCircuito" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bAnyadirCoche" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bBorrarCoche" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -269,15 +256,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="bAnyadirCircuito" min="-2" max="-2" attributes="0"/>
+                      <Component id="bAnyadirCoche" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bModificarCircuito" min="-2" max="-2" attributes="0"/>
+                      <Component id="bBorrarCoche" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="bAnyadirCircuito">
+            <Component class="javax.swing.JRadioButton" name="bAnyadirCoche">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
@@ -285,7 +272,7 @@
                 <Property name="text" type="java.lang.String" value="Crear coche"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="bModificarCircuito">
+            <Component class="javax.swing.JRadioButton" name="bBorrarCoche">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>
@@ -332,7 +319,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="bAnyadirCircuito1" min="-2" max="-2" attributes="0"/>
+                      <Component id="bEntrenar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="94" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -341,14 +328,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="bAnyadirCircuito1" min="-2" max="-2" attributes="0"/>
+                      <Component id="bEntrenar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="bAnyadirCircuito1">
+            <Component class="javax.swing.JRadioButton" name="bEntrenar">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>

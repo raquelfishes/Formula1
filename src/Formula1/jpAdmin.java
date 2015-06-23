@@ -55,19 +55,9 @@ public class jpAdmin extends javax.swing.JFrame {
 
         Agrupados.add(bAnyadirEscuderia);
         bAnyadirEscuderia.setText("Añadir Escuderia");
-        bAnyadirEscuderia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAnyadirEscuderiaActionPerformed(evt);
-            }
-        });
 
         Agrupados.add(bModificarEscuderia);
         bModificarEscuderia.setText("Modificar Escuderia");
-        bModificarEscuderia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bModificarEscuderiaActionPerformed(evt);
-            }
-        });
 
         Agrupados.add(bBorrarEscuderia);
         bBorrarEscuderia.setText("Borrar Escuderia");
@@ -300,9 +290,13 @@ public class jpAdmin extends javax.swing.JFrame {
             if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar Escuderia",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
                 == JOptionPane.OK_OPTION) {
-                    Escuderia escuderia=Formula1UI.formula1.escuderias.get(pConsulta.getNumero()-1);
-                    Escuderia x= Formula1UI.formula1.consultarEscuderia(escuderia);
-                    Resultados.setText (x.toString());
+                    if ((pConsulta.getNumero()-1<1) || (pConsulta.getNumero()-1>Formula1UI.formula1.escuderias.size())){
+                        Resultados.setText ("");
+                        Escuderia escuderia=Formula1UI.formula1.escuderias.get(pConsulta.getNumero()-1);
+                        Resultados.setText (escuderia.toString());
+                    }else{
+                        Resultados.setText ("El identificador de escuderia no es correcto");
+                    }
                 }
             }else{
                 Resultados.setText ("No hay escuderias");
@@ -429,14 +423,6 @@ public class jpAdmin extends javax.swing.JFrame {
             }
         }
 }//GEN-LAST:event_AccionActionPerformed
-
-    private void bModificarEscuderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bModificarEscuderiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bModificarEscuderiaActionPerformed
-
-    private void bAnyadirEscuderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAnyadirEscuderiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bAnyadirEscuderiaActionPerformed
 
     /**
     * @param args the command line arguments

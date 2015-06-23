@@ -8,9 +8,11 @@ import javax.swing.JOptionPane;
 
 public class jpEscuderia extends javax.swing.JFrame {
 
+    static int id;
     
-    public jpEscuderia() {
+    public jpEscuderia(int idEscuderia) {
         initComponents();
+        id = idEscuderia;
         this.setTitle ("Dueño Escuderia");
         setDefaultCloseOperation(jpEscuderia.DISPOSE_ON_CLOSE);
     }
@@ -27,21 +29,21 @@ public class jpEscuderia extends javax.swing.JFrame {
         Agrupados = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        bConsultarEscuderia = new javax.swing.JRadioButton();
-        bConsultarEscuderia1 = new javax.swing.JRadioButton();
+        bInfoEscuderia = new javax.swing.JRadioButton();
+        bElegirPilotoyCoche = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
-        bAnyadirPiloto = new javax.swing.JRadioButton();
-        bModificarPiloto = new javax.swing.JRadioButton();
-        bBorrarPiloto = new javax.swing.JRadioButton();
-        bConsultarPiloto = new javax.swing.JRadioButton();
+        bDescartarPiloto = new javax.swing.JRadioButton();
+        bFicharPilotoLibre = new javax.swing.JRadioButton();
+        bFicharPilotoOtra = new javax.swing.JRadioButton();
+        bInercambioPiloto = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
-        bAnyadirCircuito = new javax.swing.JRadioButton();
-        bModificarCircuito = new javax.swing.JRadioButton();
+        bAnyadirCoche = new javax.swing.JRadioButton();
+        bBorrarCoche = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Resultados = new javax.swing.JTextArea();
         Accion = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        bAnyadirCircuito1 = new javax.swing.JRadioButton();
+        bEntrenar = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,21 +52,11 @@ public class jpEscuderia extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Escuderia:"));
         jPanel2.setToolTipText("");
 
-        Agrupados.add(bConsultarEscuderia);
-        bConsultarEscuderia.setText("Informacion");
-        bConsultarEscuderia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bConsultarEscuderiaActionPerformed(evt);
-            }
-        });
+        Agrupados.add(bInfoEscuderia);
+        bInfoEscuderia.setText("Informacion");
 
-        Agrupados.add(bConsultarEscuderia1);
-        bConsultarEscuderia1.setText("Elegir coche y piloto para mundial");
-        bConsultarEscuderia1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bConsultarEscuderia1ActionPerformed(evt);
-            }
-        });
+        Agrupados.add(bElegirPilotoyCoche);
+        bElegirPilotoyCoche.setText("Elegir coche y piloto para mundial");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -73,33 +65,33 @@ public class jpEscuderia extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bConsultarEscuderia)
-                    .addComponent(bConsultarEscuderia1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bInfoEscuderia)
+                    .addComponent(bElegirPilotoyCoche))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bConsultarEscuderia)
+                .addComponent(bInfoEscuderia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bConsultarEscuderia1)
+                .addComponent(bElegirPilotoyCoche)
                 .addGap(26, 26, 26))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Pilotos:"));
 
-        Agrupados.add(bAnyadirPiloto);
-        bAnyadirPiloto.setText("Descartar piloto");
+        Agrupados.add(bDescartarPiloto);
+        bDescartarPiloto.setText("Descartar piloto");
 
-        Agrupados.add(bModificarPiloto);
-        bModificarPiloto.setText("Fichar piloto libre");
+        Agrupados.add(bFicharPilotoLibre);
+        bFicharPilotoLibre.setText("Fichar piloto libre");
 
-        Agrupados.add(bBorrarPiloto);
-        bBorrarPiloto.setText("Fichar piloto de otra escuderia");
+        Agrupados.add(bFicharPilotoOtra);
+        bFicharPilotoOtra.setText("Fichar piloto de otra escuderia");
 
-        Agrupados.add(bConsultarPiloto);
-        bConsultarPiloto.setText("Intercambiar piloto");
+        Agrupados.add(bInercambioPiloto);
+        bInercambioPiloto.setText("Intercambiar piloto");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -108,30 +100,30 @@ public class jpEscuderia extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bAnyadirPiloto)
-                    .addComponent(bModificarPiloto)
-                    .addComponent(bBorrarPiloto)
-                    .addComponent(bConsultarPiloto)))
+                    .addComponent(bDescartarPiloto)
+                    .addComponent(bFicharPilotoLibre)
+                    .addComponent(bFicharPilotoOtra)
+                    .addComponent(bInercambioPiloto)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(bAnyadirPiloto)
+                .addComponent(bDescartarPiloto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bModificarPiloto)
+                .addComponent(bFicharPilotoLibre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bBorrarPiloto)
+                .addComponent(bFicharPilotoOtra)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bConsultarPiloto))
+                .addComponent(bInercambioPiloto))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Coches:"));
 
-        Agrupados.add(bAnyadirCircuito);
-        bAnyadirCircuito.setText("Crear coche");
+        Agrupados.add(bAnyadirCoche);
+        bAnyadirCoche.setText("Crear coche");
 
-        Agrupados.add(bModificarCircuito);
-        bModificarCircuito.setText("Dar de baja coche");
+        Agrupados.add(bBorrarCoche);
+        bBorrarCoche.setText("Dar de baja coche");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -140,17 +132,17 @@ public class jpEscuderia extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bAnyadirCircuito)
-                    .addComponent(bModificarCircuito))
-                .addContainerGap(76, Short.MAX_VALUE))
+                    .addComponent(bAnyadirCoche)
+                    .addComponent(bBorrarCoche))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bAnyadirCircuito)
+                .addComponent(bAnyadirCoche)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bModificarCircuito))
+                .addComponent(bBorrarCoche))
         );
 
         Resultados.setColumns(20);
@@ -166,8 +158,8 @@ public class jpEscuderia extends javax.swing.JFrame {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Entrenamiento:"));
 
-        Agrupados.add(bAnyadirCircuito1);
-        bAnyadirCircuito1.setText("Entrenar");
+        Agrupados.add(bEntrenar);
+        bEntrenar.setText("Entrenar");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -175,14 +167,14 @@ public class jpEscuderia extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(bAnyadirCircuito1)
+                .addComponent(bEntrenar)
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(bAnyadirCircuito1)
+                .addComponent(bEntrenar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -191,25 +183,21 @@ public class jpEscuderia extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(205, 205, 205)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(213, 213, 213)
+                        .addComponent(Accion))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(Accion)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,6 +239,7 @@ public class jpEscuderia extends javax.swing.JFrame {
     private void AccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionActionPerformed
 
     //Añade Escuderia
+        
         if(bAnyadirEscuderia.isSelected()){
             jpAñadeEscuderia pAñade = new jpAñadeEscuderia();
             if(JOptionPane.showConfirmDialog(this, pAñade, "Añade Escuderia",
@@ -262,6 +251,7 @@ public class jpEscuderia extends javax.swing.JFrame {
                 Resultados.setText ("La escuderia se ha insertado satisfactoriamente");
             }
         }
+    /*
     //Modificar Escuderia
         else if(bModificarEscuderia.isSelected()){
           if(!Formula1UI.formula1.escuderias.isEmpty()){
@@ -293,31 +283,14 @@ public class jpEscuderia extends javax.swing.JFrame {
             }else{
               Resultados.setText ("No hay escuderias");
             }
-        }
-    //Consultar Escuderia
-        else if(bConsultarEscuderia.isSelected()){
-          if(!Formula1UI.formula1.escuderias.isEmpty()){
-            jpConsultaEscuderia pConsulta = new jpConsultaEscuderia();
-            if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar Escuderia",
-                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
-                == JOptionPane.OK_OPTION) {
-                    Escuderia escuderia=Formula1UI.formula1.escuderias.get(pConsulta.getNumero()-1);
-                    Escuderia x= Formula1UI.formula1.consultarEscuderia(escuderia);
-                    Resultados.setText (x.toString());
-                }
-            }else{
-                Resultados.setText ("No hay escuderias");
-            }
+        }*/
+    /* Escuderia */
+        // Info Escuderia
+        else if(bInfoEscuderia.isSelected()){
+            Escuderia escuderia=Formula1UI.formula1.escuderias.get(id-1);
+            Resultados.setText (escuderia.toString());
         }
 }//GEN-LAST:event_AccionActionPerformed
-
-    private void bConsultarEscuderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarEscuderiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bConsultarEscuderiaActionPerformed
-
-    private void bConsultarEscuderia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarEscuderia1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bConsultarEscuderia1ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -325,7 +298,7 @@ public class jpEscuderia extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jpEscuderia().setVisible(true);
+                new jpEscuderia(id).setVisible(true);
             }
         });
     }
@@ -334,15 +307,15 @@ public class jpEscuderia extends javax.swing.JFrame {
     private javax.swing.JButton Accion;
     private javax.swing.ButtonGroup Agrupados;
     private javax.swing.JTextArea Resultados;
-    private javax.swing.JRadioButton bAnyadirCircuito;
-    private javax.swing.JRadioButton bAnyadirCircuito1;
-    private javax.swing.JRadioButton bAnyadirPiloto;
-    private javax.swing.JRadioButton bBorrarPiloto;
-    private javax.swing.JRadioButton bConsultarEscuderia;
-    private javax.swing.JRadioButton bConsultarEscuderia1;
-    private javax.swing.JRadioButton bConsultarPiloto;
-    private javax.swing.JRadioButton bModificarCircuito;
-    private javax.swing.JRadioButton bModificarPiloto;
+    private javax.swing.JRadioButton bAnyadirCoche;
+    private javax.swing.JRadioButton bBorrarCoche;
+    private javax.swing.JRadioButton bDescartarPiloto;
+    private javax.swing.JRadioButton bElegirPilotoyCoche;
+    private javax.swing.JRadioButton bEntrenar;
+    private javax.swing.JRadioButton bFicharPilotoLibre;
+    private javax.swing.JRadioButton bFicharPilotoOtra;
+    private javax.swing.JRadioButton bInercambioPiloto;
+    private javax.swing.JRadioButton bInfoEscuderia;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
