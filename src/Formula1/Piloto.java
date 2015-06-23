@@ -14,8 +14,7 @@ class DatosPersonales{
         edad = e;
         altura = a;
         peso = p;
-    }
-    
+    }    
 }
 
 class CaracteristicasTecnicasPiloto{
@@ -120,6 +119,19 @@ public class Piloto {
         if (d.peso != 0) datosPersonales.peso = d.peso;
     }
     
+    public int getPuntosMundial() {
+        return puntosMundial;
+    }
+    public void setPuntosMundial(int p) {
+        puntosMundial = p;
+    }
+
+    public CaracteristicasTecnicasPiloto getCaracteristicasTecnicas() {
+        return caracteristicasTecnicas;
+    }
+    public void setCaracteristicasTecnicas(CaracteristicasTecnicasPiloto c) {
+        caracteristicasTecnicas = c;
+    }
     
     
 }

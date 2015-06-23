@@ -14,6 +14,8 @@ public class Formula1 implements Serializable{
     ArrayList<Piloto> pilotos;
     ArrayList<Circuito> circuitos;
     
+    Mundial mundial;
+    
     
     public Formula1(){
         escuderias = new ArrayList();
@@ -161,4 +163,10 @@ public class Formula1 implements Serializable{
            }
         return s.toString();
    }
+    
+    // Gestionar Mundial
+    
+    public void crearMundial(){
+        mundial = new Mundial(escuderias);
+    }
 }

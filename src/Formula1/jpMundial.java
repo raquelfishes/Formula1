@@ -24,10 +24,10 @@ public class jpMundial extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Resultados = new javax.swing.JTextArea();
-        Accion = new javax.swing.JButton();
-        Accion1 = new javax.swing.JButton();
-        Accion2 = new javax.swing.JButton();
-        Accion3 = new javax.swing.JButton();
+        bEmpezarMundial = new javax.swing.JButton();
+        bEstadisticasMundial = new javax.swing.JButton();
+        bEstadisticasCarrera = new javax.swing.JButton();
+        bEmpezarCarrera = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,31 +37,31 @@ public class jpMundial extends javax.swing.JFrame {
         Resultados.setRows(5);
         jScrollPane1.setViewportView(Resultados);
 
-        Accion.setText("Empezar Mundial");
-        Accion.addActionListener(new java.awt.event.ActionListener() {
+        bEmpezarMundial.setText("Empezar Mundial");
+        bEmpezarMundial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionActionPerformed(evt);
+                bEmpezarMundialActionPerformed(evt);
             }
         });
 
-        Accion1.setText("Estadisticas Mundial");
-        Accion1.addActionListener(new java.awt.event.ActionListener() {
+        bEstadisticasMundial.setText("Estadisticas Mundial");
+        bEstadisticasMundial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Accion1ActionPerformed(evt);
+                bEstadisticasMundialActionPerformed(evt);
             }
         });
 
-        Accion2.setText("Estadisticas Carrera");
-        Accion2.addActionListener(new java.awt.event.ActionListener() {
+        bEstadisticasCarrera.setText("Estadisticas Carrera");
+        bEstadisticasCarrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Accion2ActionPerformed(evt);
+                bEstadisticasCarreraActionPerformed(evt);
             }
         });
 
-        Accion3.setText("Empezar Carrera");
-        Accion3.addActionListener(new java.awt.event.ActionListener() {
+        bEmpezarCarrera.setText("Empezar Carrera");
+        bEmpezarCarrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Accion3ActionPerformed(evt);
+                bEmpezarCarreraActionPerformed(evt);
             }
         });
 
@@ -75,25 +75,25 @@ public class jpMundial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(221, 221, 221)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Accion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Accion2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Accion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Accion3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(bEstadisticasMundial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bEstadisticasCarrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bEmpezarMundial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bEmpezarCarrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(Accion)
+                .addComponent(bEmpezarMundial)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Accion1)
+                .addComponent(bEstadisticasMundial)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Accion2)
+                .addComponent(bEstadisticasCarrera)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Accion3)
+                .addComponent(bEmpezarCarrera)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,21 +116,21 @@ public class jpMundial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionActionPerformed
+    private void bEmpezarMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarMundialActionPerformed
 
-}//GEN-LAST:event_AccionActionPerformed
+}//GEN-LAST:event_bEmpezarMundialActionPerformed
 
-    private void Accion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Accion1ActionPerformed
+    private void bEstadisticasMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEstadisticasMundialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Accion1ActionPerformed
+    }//GEN-LAST:event_bEstadisticasMundialActionPerformed
 
-    private void Accion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Accion2ActionPerformed
+    private void bEstadisticasCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEstadisticasCarreraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Accion2ActionPerformed
+    }//GEN-LAST:event_bEstadisticasCarreraActionPerformed
 
-    private void Accion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Accion3ActionPerformed
+    private void bEmpezarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarCarreraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Accion3ActionPerformed
+    }//GEN-LAST:event_bEmpezarCarreraActionPerformed
 
     /**
     * @param args the command line arguments
@@ -144,12 +144,12 @@ public class jpMundial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Accion;
-    private javax.swing.JButton Accion1;
-    private javax.swing.JButton Accion2;
-    private javax.swing.JButton Accion3;
     private javax.swing.ButtonGroup Agrupados;
     private javax.swing.JTextArea Resultados;
+    private javax.swing.JButton bEmpezarCarrera;
+    private javax.swing.JButton bEmpezarMundial;
+    private javax.swing.JButton bEstadisticasCarrera;
+    private javax.swing.JButton bEstadisticasMundial;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

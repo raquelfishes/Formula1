@@ -55,7 +55,7 @@ public class Escuderia {
         }
     }
     
-    public void pagarCanon(int canon){
+    public void pagarCanon(float canon){
         presupuesto -= canon;
     }
     
