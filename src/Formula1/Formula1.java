@@ -81,7 +81,7 @@ public class Formula1 implements Serializable{
     }
     
     public void modificarPiloto(int piloto ,String nombre, String apellidos,
-            DatosPersonales datosPersonales, String presupuesto) throws ParseException{
+            DatosPersonales datosPersonales) throws ParseException{
         if (!nombre.equals("")){
             pilotos.get(piloto-1).setNombre(nombre);
         }
@@ -126,16 +126,16 @@ public class Formula1 implements Serializable{
        circuitos.remove(circuito);
     }
     
-    public void modificarCircuito(int circuito, String nombre, String aforo,
-            String canon, String presupuesto) throws ParseException{
+    public void modificarCircuito(int circuito, String nombre, int aforo,
+            int canon) throws ParseException{
         if (!nombre.equals("")){
             circuitos.get(circuito-1).setNombre(nombre);
         }
-        if (!aforo.equals("")){
-            circuitos.get(circuito-1).setAforo(Integer.parseInt(aforo));
+        if (aforo != 0){
+            circuitos.get(circuito-1).setAforo(aforo);
         }
-        if (!canon.equals("")){
-            circuitos.get(circuito-1).setCanon(Integer.parseInt(canon));
+        if (canon != 0){
+            circuitos.get(circuito-1).setCanon(canon);
         }
     }
     
