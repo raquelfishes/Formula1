@@ -34,6 +34,8 @@ public class Escuderia {
         coches = new ArrayList();
     }
     
+    
+    
     public void ficharPiloto(Piloto p){
         
     }
@@ -57,6 +59,15 @@ public class Escuderia {
     
     public void pagarCanon(int canon){
         presupuesto -= canon;
+    }
+    
+    public String anyadirCoche(Coche coche){
+        if(coches.size()<2){
+            coches.add(coche);
+            return "El coche se ha comprado con exito";
+        }else{
+            return "Ya tiene el garaje lleno";
+        }
     }
     
     public String toString(){
@@ -98,5 +109,9 @@ public class Escuderia {
     }
     public void setPresupuesto(int p){
         presupuesto = p;
+    }
+    
+    public int getNumCoches(){
+        return coches.size();
     }
 }
