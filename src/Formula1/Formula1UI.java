@@ -121,8 +121,22 @@ public class Formula1UI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bEscuderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEscuderiaActionPerformed
-        //jpEscuderia pEscudria = new jpEscuderia();
-        //pEscudria.setVisible(true);
+        if(!Formula1UI.formula1.escuderias.isEmpty()){
+            jpConsultaEscuderia pConsulta = new jpConsultaEscuderia();
+            if(JOptionPane.showConfirmDialog(this, pConsulta, "Informacion Escuderia",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                == JOptionPane.OK_OPTION) {
+                    if ((pConsulta.getNumero()-1<1) || (pConsulta.getNumero()-1>Formula1UI.formula1.escuderias.size())){
+                        jAviso.setText ("");
+                        jpEscuderia pEscudria = new jpEscuderia(pConsulta.getNumero());
+                        pEscudria.setVisible(true);
+                    }else{
+                        jAviso.setText ("El identificador de escuderia no es correcto");
+                    }
+                }
+            }else{
+                jAviso.setText ("No hay escuderias");
+            }
     }//GEN-LAST:event_bEscuderiaActionPerformed
 
     private void bMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMundialActionPerformed

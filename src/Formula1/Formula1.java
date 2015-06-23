@@ -64,10 +64,8 @@ public class Formula1 implements Serializable{
     
     public String mostrarEscuderias (){
         StringBuilder s = new StringBuilder();
-        int e=0;
-           for (Escuderia es : escuderias) {
-               e++;           
-               s.append(e).append (es.toString());
+           for (Escuderia es : escuderias) {           
+               s.append (es.toString());
            }
         return s.toString();
    }
