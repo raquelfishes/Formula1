@@ -1,8 +1,3 @@
-/*
- * jpI.java
- *
- * Created on 06-dic-2010, 19:48:51
- */
 
 package Formula1;
 
@@ -53,7 +48,7 @@ public class jpAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("INEM"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Administrador"));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Escuderias:"));
         jPanel2.setToolTipText("");
@@ -311,6 +306,126 @@ public class jpAdmin extends javax.swing.JFrame {
                 }
             }else{
                 Resultados.setText ("No hay escuderias");
+            }
+        }
+        
+    //Añade Piloto
+        if(bAnyadirPiloto.isSelected()){
+            jpAñadePiloto pAñade = new jpAñadePiloto();
+            if(JOptionPane.showConfirmDialog(this, pAñade, "Añade Piloto",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                    Piloto piloto = new Piloto(pAñade.getNombre(), pAñade.getApellidos(),
+                    pAñade.getDatosPersonales(), pAñade.getCaracteristicasTecnicas());
+                Formula1UI.formula1.añadirPiloto(piloto);
+                Resultados.setText ("El piloto se ha insertado satisfactoriamente");
+            }
+        }
+    //Modificar Piloto
+        else if(bModificarPiloto.isSelected()){
+          if(!Formula1UI.formula1.pilotos.isEmpty()){
+            jpEditaPiloto pEdita = new jpEditaPiloto();
+            if(JOptionPane.showConfirmDialog(this, pEdita, "Modificar Piloto",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                try {
+                    Formula1UI.formula1.modificarPiloto(pEdita.getNumero()-1, pEdita.getNombre(), 
+                            pEdita.getApellidos(), pEdita.getDatosPersonales());
+                } catch (ParseException ex) {
+                    Logger.getLogger(jpAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                Resultados.setText ("El piloto se ha modificado satisfactoriamente");
+            }
+          }
+        }
+    //Borrar Piloto
+        else if(bBorrarPiloto.isSelected()){
+          if(!Formula1UI.formula1.pilotos.isEmpty()){
+            jpBorraPiloto pBorra = new jpBorraPiloto();
+            if(JOptionPane.showConfirmDialog(this, pBorra, "Borrar Piloto",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                == JOptionPane.OK_OPTION) {
+                    Piloto piloto=Formula1UI.formula1.pilotos.get(pBorra.getNumero()-1);
+                    Formula1UI.formula1.borrarPiloto(piloto);
+                    Resultados.setText ("El piloto se ha borrado satisfactoriamente");
+                }
+            }else{
+              Resultados.setText ("No hay pilotos");
+            }
+        }
+    //Consultar Piloto
+        else if(bConsultarPiloto.isSelected()){
+          if(!Formula1UI.formula1.pilotos.isEmpty()){
+            jpConsultaPiloto pConsulta = new jpConsultaPiloto();
+            if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar Piloto",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                == JOptionPane.OK_OPTION) {
+                    Piloto piloto=Formula1UI.formula1.pilotos.get(pConsulta.getNumero()-1);
+                    Piloto x= Formula1UI.formula1.consultarPiloto(piloto);
+                    Resultados.setText (x.toString());
+                }
+            }else{
+                Resultados.setText ("No hay pilotos");
+            }
+        }
+        
+    //Añade Circuito
+        if(bAnyadirCircuito.isSelected()){
+            jpAñadeCircuito pAñade = new jpAñadeCircuito();
+            if(JOptionPane.showConfirmDialog(this, pAñade, "Añade Circuito",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                    Circuito circuito = new Circuito(pAñade.getNombre(), pAñade.getAforo(),
+                    pAñade.getCanon(), pAñade.getNumRectas(), pAñade.getNumCurvas());
+                Formula1UI.formula1.añadirCircuito(circuito);
+                Resultados.setText ("El circuito se ha insertado satisfactoriamente");
+            }
+        }
+    //Modificar Circuito
+        else if(bModificarCircuito.isSelected()){
+          if(!Formula1UI.formula1.circuitos.isEmpty()){
+            jpEditaCircuito pEdita = new jpEditaCircuito();
+            if(JOptionPane.showConfirmDialog(this, pEdita, "Modificar Circuito",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                try {
+                    Formula1UI.formula1.modificarCircuito(pEdita.getNumero()-1, pEdita.getNombre(), 
+                            pEdita.getAforo(), pEdita.getCanon());
+                } catch (ParseException ex) {
+                    Logger.getLogger(jpAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                Resultados.setText ("El circuito se ha modificado satisfactoriamente");
+            }
+          }
+        }
+    //Borrar Circuito
+        else if(bBorrarCircuito.isSelected()){
+          if(!Formula1UI.formula1.pilotos.isEmpty()){
+            jpBorraCircuito pBorra = new jpBorraCircuito();
+            if(JOptionPane.showConfirmDialog(this, pBorra, "Borrar Circuito",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                == JOptionPane.OK_OPTION) {
+                    Circuito circuito=Formula1UI.formula1.circuitos.get(pBorra.getNumero()-1);
+                    Formula1UI.formula1.borrarCircuito(circuito);
+                    Resultados.setText ("El circuito se ha borrado satisfactoriamente");
+                }
+            }else{
+              Resultados.setText ("No hay circuitos");
+            }
+        }
+    //Consultar Circuito
+        else if(bConsultarCircuito.isSelected()){
+          if(!Formula1UI.formula1.circuitos.isEmpty()){
+            jpConsultaCircuito pConsulta = new jpConsultaCircuito();
+            if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar Circuito",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                == JOptionPane.OK_OPTION) {
+                    Circuito circuito=Formula1UI.formula1.circuitos.get(pConsulta.getNumero()-1);
+                    Circuito x= Formula1UI.formula1.consultarCircuito(circuito);
+                    Resultados.setText (x.toString());
+                }
+            }else{
+                Resultados.setText ("No hay circuitos");
             }
         }
 }//GEN-LAST:event_AccionActionPerformed

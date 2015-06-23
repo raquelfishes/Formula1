@@ -43,7 +43,7 @@ class CaracteristicasTecnicasPiloto{
     }
 }
 
-public abstract class Piloto {
+public class Piloto {
     static int contador = 0;
     private int identificador;
     private String nombre;
@@ -77,9 +77,9 @@ public abstract class Piloto {
     
     // Metodos abstractos
     
-    abstract public float calcularSueldo();
+    public float calcularSueldo(){return 0.0f;}
     
-    abstract public void mejorar();
+    public void mejorar(){}
     
     
     // Getters y Setters
@@ -115,7 +115,9 @@ public abstract class Piloto {
         return datosPersonales;
     }
     public void setDatosPersonales(DatosPersonales d){
-        datosPersonales = d;
+        if (d.edad != 0) datosPersonales.edad = d.edad;
+        if (d.altura != 0) datosPersonales.altura = d.altura;
+        if (d.peso != 0) datosPersonales.peso = d.peso;
     }
     
     

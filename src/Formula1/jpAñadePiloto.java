@@ -18,10 +18,10 @@ import java.util.Date;
  *
  * @author AlbertoMartin
  */
-public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
+public class jpAñadePiloto extends javax.swing.JPanel implements Enum {
 
     /** Creates new form pEditarAlumno */
-    public jpAñadeEscuderia() {
+    public jpAñadePiloto() {
         initComponents();
     }
 
@@ -40,14 +40,24 @@ public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
         buttonGroup4 = new javax.swing.ButtonGroup();
         lNombre = new javax.swing.JLabel();
         tNombre = new javax.swing.JTextField();
-        lPais = new javax.swing.JLabel();
-        tPais = new javax.swing.JTextField();
-        lAnyoFundacion = new javax.swing.JLabel();
-        tAnyoFundacion = new javax.swing.JTextField();
-        lPresupuesto = new javax.swing.JLabel();
-        tPresupuesto = new javax.swing.JTextField();
-        lDirectivos = new javax.swing.JLabel();
-        tDirectivos = new javax.swing.JTextField();
+        lApellidos = new javax.swing.JLabel();
+        tApellidos = new javax.swing.JTextField();
+        lDatosPersonales = new javax.swing.JLabel();
+        lEdad = new javax.swing.JLabel();
+        tEdad = new javax.swing.JTextField();
+        lAltura = new javax.swing.JLabel();
+        tAltura = new javax.swing.JTextField();
+        lPeso = new javax.swing.JLabel();
+        tPeso = new javax.swing.JTextField();
+        lCaracteristicasTecnicas = new javax.swing.JLabel();
+        lReflejos = new javax.swing.JLabel();
+        tReflejos = new javax.swing.JTextField();
+        lAgresividad = new javax.swing.JLabel();
+        tAgresividad = new javax.swing.JTextField();
+        lPaciencia = new javax.swing.JLabel();
+        tPaciencia = new javax.swing.JTextField();
+        lValentia = new javax.swing.JLabel();
+        tValentia = new javax.swing.JTextField();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Añadir Escuderia"));
 
@@ -60,17 +70,35 @@ public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
             }
         });
 
-        lPais.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lPais.setText("Pais:");
+        lApellidos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lApellidos.setText("Apellidos:");
 
-        lAnyoFundacion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lAnyoFundacion.setText("Año Fundación:");
+        lDatosPersonales.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lDatosPersonales.setText("Datos Personales:");
 
-        lPresupuesto.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lPresupuesto.setText("Presupuesto:");
+        lEdad.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lEdad.setText("Edad:");
 
-        lDirectivos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lDirectivos.setText("Directivos (Separar por comas):");
+        lAltura.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lAltura.setText("Altura:");
+
+        lPeso.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lPeso.setText("Peso:");
+
+        lCaracteristicasTecnicas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lCaracteristicasTecnicas.setText("Caracteristicas Tecnicas:");
+
+        lReflejos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lReflejos.setText("Reflejos:");
+
+        lAgresividad.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lAgresividad.setText("Agresivida:");
+
+        lPaciencia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lPaciencia.setText("Paciencia:");
+
+        lValentia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lValentia.setText("Valentia:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -80,28 +108,54 @@ public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lDirectivos)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lNombre)
+                                    .addComponent(lApellidos))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tApellidos)
+                                    .addComponent(tNombre)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lDatosPersonales)
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lPeso)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lAltura)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lEdad)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(20, 20, 20))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(lCaracteristicasTecnicas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lNombre)
-                            .addComponent(lPais))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tPais)
-                            .addComponent(tNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lAnyoFundacion)
-                            .addComponent(lPresupuesto))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tPresupuesto)
-                            .addComponent(tAnyoFundacion, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(tDirectivos, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)))
-                .addGap(20, 20, 20))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lReflejos)
+                                .addGap(25, 25, 25)
+                                .addComponent(tReflejos, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lAgresividad)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tAgresividad, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lValentia)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tValentia, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lPaciencia)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tPaciencia, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(21, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,21 +166,39 @@ public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
                     .addComponent(tNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lPais)
-                    .addComponent(tPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lApellidos)
+                    .addComponent(tApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lAnyoFundacion)
-                    .addComponent(tAnyoFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lDatosPersonales)
+                    .addComponent(tEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lEdad))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lPresupuesto)
-                    .addComponent(tPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lAltura))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lDirectivos)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lPeso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lCaracteristicasTecnicas)
+                    .addComponent(tReflejos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lReflejos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tDirectivos, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tAgresividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lAgresividad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tPaciencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lPaciencia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tValentia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lValentia))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -143,43 +215,49 @@ public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
         }
     }
     
-    public String getPais () {
-        String s= "Sin Pais";
-        if (!tPais.getText().equals("")){
-            return tPais.getText();
+    public String getApellidos () {
+        String s= "Sin Apellidos";
+        if (!tApellidos.getText().equals("")){
+            return tApellidos.getText();
         }else{
             return s;
         }
     }
     
-    public int getAnyoFundacion () {
-        int s= 0;
-        if (!tAnyoFundacion.getText().equals("")){
-            return Integer.parseInt(tAnyoFundacion.getText());
-        }else{
-            return s;
+    public DatosPersonales getDatosPersonales() {
+        int edad = 0;
+        float altura = 0;
+        float peso = 0;
+        if (!tEdad.getText().equals("")){
+            edad = Integer.parseInt(tEdad.getText());
         }
-        
-        
+        if (!tAltura.getText().equals("")){
+            altura = Float.parseFloat(tAltura.getText());
+        }
+        if (!tPeso.getText().equals("")){
+            peso = Float.parseFloat(tPeso.getText());
+        }
+        return new DatosPersonales(edad,altura,peso);               
     }
     
-    public int getPresupuesto () {
-        int s=0;
-        if (!tPresupuesto.getText().equals("")){
-            return Integer.parseInt(tPresupuesto.getText());
-        }else{
-            return s;
-        }               
-    }
-    
-    public String[] getDirectivos () {
-        String[] s = null;
-        if (!tDirectivos.getText().equals("")){
-            return tDirectivos.getText().split(",");
-        }else{
-            return s;
+    public CaracteristicasTecnicasPiloto getCaracteristicasTecnicas () {
+        float reflejos = 0;
+        float agresividad = 0;
+        float paciencia = 0;
+        float valentia = 0;
+        if (!tReflejos.getText().equals("")){
+            reflejos = Float.parseFloat(tReflejos.getText());
         }
-        
+        if (!tAgresividad.getText().equals("")){
+            agresividad = Float.parseFloat(tAgresividad.getText());
+        }
+        if (!tPaciencia.getText().equals("")){
+            paciencia = Float.parseFloat(tPaciencia.getText());
+        }
+        if (!tValentia.getText().equals("")){
+            valentia = Float.parseFloat(tValentia.getText());
+        }
+        return new CaracteristicasTecnicasPiloto(reflejos,agresividad,paciencia,valentia);               
     }
     
     
@@ -188,16 +266,26 @@ public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JLabel lAnyoFundacion;
-    private javax.swing.JLabel lDirectivos;
+    private javax.swing.JLabel lAgresividad;
+    private javax.swing.JLabel lAltura;
+    private javax.swing.JLabel lApellidos;
+    private javax.swing.JLabel lCaracteristicasTecnicas;
+    private javax.swing.JLabel lDatosPersonales;
+    private javax.swing.JLabel lEdad;
     private javax.swing.JLabel lNombre;
-    private javax.swing.JLabel lPais;
-    private javax.swing.JLabel lPresupuesto;
-    private javax.swing.JTextField tAnyoFundacion;
-    private javax.swing.JTextField tDirectivos;
+    private javax.swing.JLabel lPaciencia;
+    private javax.swing.JLabel lPeso;
+    private javax.swing.JLabel lReflejos;
+    private javax.swing.JLabel lValentia;
+    private javax.swing.JTextField tAgresividad;
+    private javax.swing.JTextField tAltura;
+    private javax.swing.JTextField tApellidos;
+    private javax.swing.JTextField tEdad;
     private javax.swing.JTextField tNombre;
-    private javax.swing.JTextField tPais;
-    private javax.swing.JTextField tPresupuesto;
+    private javax.swing.JTextField tPaciencia;
+    private javax.swing.JTextField tPeso;
+    private javax.swing.JTextField tReflejos;
+    private javax.swing.JTextField tValentia;
     // End of variables declaration//GEN-END:variables
 
 }

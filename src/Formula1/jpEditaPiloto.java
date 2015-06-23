@@ -1,10 +1,10 @@
 
 package Formula1;
 
-public class jpEditaEscuderia extends javax.swing.JPanel implements Enum{
+public class jpEditaPiloto extends javax.swing.JPanel implements Enum{
 
     /** Creates new form jpIEditarUsuario */
-    public jpEditaEscuderia() {
+    public jpEditaPiloto() {
         initComponents();
     }
 
@@ -22,12 +22,15 @@ public class jpEditaEscuderia extends javax.swing.JPanel implements Enum{
         jPanel1 = new javax.swing.JPanel();
         lNombre = new javax.swing.JLabel();
         tNombre = new javax.swing.JTextField();
-        lAnyoFundacion = new javax.swing.JLabel();
-        tAnyoFundacion = new javax.swing.JTextField();
-        lPais = new javax.swing.JLabel();
-        tPais = new javax.swing.JTextField();
-        lPresupuesto = new javax.swing.JLabel();
-        tPresupuesto = new javax.swing.JTextField();
+        lApellidos = new javax.swing.JLabel();
+        tApellidos = new javax.swing.JTextField();
+        lDatosPersonales = new javax.swing.JLabel();
+        lEdad = new javax.swing.JLabel();
+        tEdad = new javax.swing.JTextField();
+        lAltura = new javax.swing.JLabel();
+        tAltura = new javax.swing.JTextField();
+        lPeso = new javax.swing.JLabel();
+        tPeso = new javax.swing.JTextField();
 
         jLabel1.setText("Identificador Escuderia a modificar:");
 
@@ -36,14 +39,20 @@ public class jpEditaEscuderia extends javax.swing.JPanel implements Enum{
         lNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lNombre.setText("Nombre:");
 
-        lAnyoFundacion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lAnyoFundacion.setText("Año Fundación:");
+        lApellidos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lApellidos.setText("Apellidos:");
 
-        lPais.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lPais.setText("Pais:");
+        lDatosPersonales.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lDatosPersonales.setText("Datos Personales:");
 
-        lPresupuesto.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lPresupuesto.setText("Presupuesto:");
+        lEdad.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lEdad.setText("Edad:");
+
+        lAltura.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lAltura.setText("Altura:");
+
+        lPeso.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lPeso.setText("Peso:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -52,18 +61,34 @@ public class jpEditaEscuderia extends javax.swing.JPanel implements Enum{
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lPais)
-                    .addComponent(lAnyoFundacion)
-                    .addComponent(lPresupuesto)
-                    .addComponent(lNombre))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tPresupuesto)
-                    .addComponent(tAnyoFundacion)
-                    .addComponent(tPais)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(tNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(lDatosPersonales)
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lAltura)
+                                    .addComponent(lEdad))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lPeso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lApellidos)
+                            .addComponent(lNombre))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tApellidos)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
@@ -75,17 +100,21 @@ public class jpEditaEscuderia extends javax.swing.JPanel implements Enum{
                     .addComponent(tNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lPais)
-                    .addComponent(tPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(lApellidos)
+                    .addComponent(tApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lAnyoFundacion)
-                    .addComponent(tAnyoFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(lDatosPersonales)
+                    .addComponent(tEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lEdad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lPresupuesto)
-                    .addComponent(tPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(tAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lAltura))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lPeso)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -122,30 +151,41 @@ public int getNumero() {
         return tNombre.getText();
     }
 
-    public String getPais() {
-        return tPais.getText();
+    public String getApellidos() {
+        return tApellidos.getText();
     }
 
-    public String getAnyoFundacion() {
-        return tAnyoFundacion.getText();
-    }
-
-    public String getPresupuesto() {
-        return tPresupuesto.getText();
+    public DatosPersonales getDatosPersonales() {
+        int edad = 0;
+        float altura = 0;
+        float peso = 0;
+        if (!tEdad.getText().equals("")){
+            edad = Integer.parseInt(tEdad.getText());
+        }
+        if (!tAltura.getText().equals("")){
+            altura = Float.parseFloat(tAltura.getText());
+        }
+        if (!tPeso.getText().equals("")){
+            peso = Float.parseFloat(tPeso.getText());
+        }
+        return new DatosPersonales(edad,altura,peso);               
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lAnyoFundacion;
+    private javax.swing.JLabel lAltura;
+    private javax.swing.JLabel lApellidos;
+    private javax.swing.JLabel lDatosPersonales;
+    private javax.swing.JLabel lEdad;
     private javax.swing.JLabel lNombre;
-    private javax.swing.JLabel lPais;
-    private javax.swing.JLabel lPresupuesto;
-    private javax.swing.JTextField tAnyoFundacion;
+    private javax.swing.JLabel lPeso;
+    private javax.swing.JTextField tAltura;
+    private javax.swing.JTextField tApellidos;
+    private javax.swing.JTextField tEdad;
     private javax.swing.JTextField tId;
     private javax.swing.JTextField tNombre;
-    private javax.swing.JTextField tPais;
-    private javax.swing.JTextField tPresupuesto;
+    private javax.swing.JTextField tPeso;
     // End of variables declaration//GEN-END:variables
 
 }
