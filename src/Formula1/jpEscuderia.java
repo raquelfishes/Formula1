@@ -249,6 +249,24 @@ public class jpEscuderia extends javax.swing.JFrame {
                 Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).anyadirCoche(coche));
             }
         }
+        // Borra Coche
+        else  if(bBorrarCoche.isSelected()){
+            jpBorraCoche pBorrar = new jpBorraCoche(id-1);
+            if(JOptionPane.showConfirmDialog(this, pBorrar, "Regalar Coche",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {         
+                Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).borrarCoche(pBorrar.getId()));
+            }
+        }
+    /* Entrenar */
+        else  if(bEntrenar.isSelected()){
+            jpBorraCoche pBorrar = new jpBorraCoche(id-1);
+            if(JOptionPane.showConfirmDialog(this, pBorrar, "Regalar Coche",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {         
+                Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).borrarCoche(pBorrar.getId()));
+            }
+        }
     /*
     //Modificar Escuderia
         else if(bModificarEscuderia.isSelected()){

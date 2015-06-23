@@ -22,6 +22,4 @@ public class PilotoOficial extends Piloto{
        caracteristicasTecnicas.mejorar((float) 0.1);
     }
     
-    
-    
 }

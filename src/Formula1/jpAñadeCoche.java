@@ -4,9 +4,8 @@
  */
 package Formula1;
 
-public class jpAñadeCoche extends javax.swing.JPanel implements Enum {
+public class jpAñadeCoche extends javax.swing.JPanel{
 
-    /** Creates new form pEditarAlumno */
     public jpAñadeCoche() {
         initComponents();
     }
@@ -20,19 +19,15 @@ public class jpAñadeCoche extends javax.swing.JPanel implements Enum {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
         lModelo = new javax.swing.JLabel();
         tModelo = new javax.swing.JTextField();
         lCaracteristicasTecnicas = new javax.swing.JLabel();
         lMotor = new javax.swing.JLabel();
-        tMotor = new javax.swing.JTextField();
         lAerodinamica = new javax.swing.JLabel();
-        tAerodinamica = new javax.swing.JTextField();
         lNeumaticos = new javax.swing.JLabel();
-        tNeumaticos = new javax.swing.JTextField();
+        jCMotor = new javax.swing.JComboBox();
+        jCAerodinamica = new javax.swing.JComboBox();
+        jCNeumaticos = new javax.swing.JComboBox();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Añadir Coche"));
 
@@ -43,13 +38,19 @@ public class jpAñadeCoche extends javax.swing.JPanel implements Enum {
         lCaracteristicasTecnicas.setText("Caracteristicas Tecnicas:");
 
         lMotor.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lMotor.setText("Reflejos:");
+        lMotor.setText("Motor:");
 
         lAerodinamica.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lAerodinamica.setText("Aerodinamica:");
 
         lNeumaticos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lNeumaticos.setText("Neumaticos:");
+
+        jCMotor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5" }));
+
+        jCAerodinamica.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5" }));
+
+        jCNeumaticos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -59,22 +60,23 @@ public class jpAñadeCoche extends javax.swing.JPanel implements Enum {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lModelo)
-                        .addGap(28, 28, 28)
-                        .addComponent(tModelo))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lCaracteristicasTecnicas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lAerodinamica)
-                            .addComponent(lNeumaticos)
-                            .addComponent(lMotor))
+                            .addComponent(lMotor, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lNeumaticos, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tNeumaticos, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tAerodinamica, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(23, 23, 23))
+                            .addComponent(jCMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCAerodinamica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCNeumaticos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lModelo)
+                        .addGap(28, 28, 28)
+                        .addComponent(tModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                        .addGap(23, 23, 23))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,16 +88,16 @@ public class jpAñadeCoche extends javax.swing.JPanel implements Enum {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lCaracteristicasTecnicas)
-                    .addComponent(tMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lMotor))
+                    .addComponent(lMotor)
+                    .addComponent(jCMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lAerodinamica)
+                    .addComponent(jCAerodinamica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tAerodinamica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lAerodinamica))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tNeumaticos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lNeumaticos))
+                    .addComponent(lNeumaticos)
+                    .addComponent(jCNeumaticos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -109,39 +111,24 @@ public class jpAñadeCoche extends javax.swing.JPanel implements Enum {
         }
     }
      
-    public CaracteristicasTecnicasCoche getCaracteristicasTecnicas () {
-        float motor = 0;
-        float aerodinamica = 0;
-        float neumaticos = 0;
+    public CaracteristicasTecnicasCoche getCaracteristicasTecnicas () { 
+        float motor = jCMotor.getSelectedIndex();
+        float aerodinamica = jCAerodinamica.getSelectedIndex();
+        float neumaticos = jCNeumaticos.getSelectedIndex();
         
-        if (!tMotor.getText().equals("")){
-            motor = Float.parseFloat(tMotor.getText());
-        }
-        if (!tAerodinamica.getText().equals("")){
-            aerodinamica = Float.parseFloat(tAerodinamica.getText());
-        }
-        if (!tNeumaticos.getText().equals("")){
-            neumaticos = Float.parseFloat(tNeumaticos.getText());
-        }
-       
         return new CaracteristicasTecnicasCoche(motor,aerodinamica,neumaticos);               
     }
     
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JComboBox jCAerodinamica;
+    private javax.swing.JComboBox jCMotor;
+    private javax.swing.JComboBox jCNeumaticos;
     private javax.swing.JLabel lAerodinamica;
     private javax.swing.JLabel lCaracteristicasTecnicas;
     private javax.swing.JLabel lModelo;
     private javax.swing.JLabel lMotor;
     private javax.swing.JLabel lNeumaticos;
-    private javax.swing.JTextField tAerodinamica;
     private javax.swing.JTextField tModelo;
-    private javax.swing.JTextField tMotor;
-    private javax.swing.JTextField tNeumaticos;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -3,21 +3,10 @@
  * and open the template in the editor.
  */
 
-/*
- * jpIBorraUsu.java
- *
- * Created on 10-dic-2010, 18:33:54
- */
-
 package Formula1;
 
-/**
- *
- * @author Garion
- */
 public class jpBorraEscuderia extends javax.swing.JPanel {
 
-    /** Creates new form jpIBorraUsu */
     public jpBorraEscuderia() {
         initComponents();
         listaescuderias.setText(Formula1UI.formula1.mostrarEscuderias()

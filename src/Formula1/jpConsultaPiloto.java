@@ -7,7 +7,6 @@ package Formula1;
 
 public class jpConsultaPiloto extends javax.swing.JPanel {
 
-    /** Creates new form jpIBorraUsu */
     public jpConsultaPiloto() {
         initComponents();
         listapilotos.setText(Formula1UI.formula1.mostrarPilotos()

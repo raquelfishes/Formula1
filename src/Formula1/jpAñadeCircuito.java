@@ -1,13 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * 
  */
 
 package Formula1;
 
-public class jpAñadeCircuito extends javax.swing.JPanel implements Enum {
+public class jpAñadeCircuito extends javax.swing.JPanel{
 
-    /** Creates new form pEditarAlumno */
     public jpAñadeCircuito() {
         initComponents();
     }

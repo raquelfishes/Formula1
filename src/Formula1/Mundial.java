@@ -5,6 +5,8 @@
  */
 package Formula1;
 
+import java.util.ArrayList;
+
 public class Mundial {
     
     private ArrayList<Escuderia> escuderias;

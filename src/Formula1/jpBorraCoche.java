@@ -1,26 +1,16 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * jpIOferta.java
- *
- * Created on 07-dic-2010, 19:22:15
+ * 
+ * 
  */
 
 package Formula1;
 
-/**
- *
- * @author July
- */
-public class jpIOferta extends javax.swing.JPanel {
+public class jpBorraCoche extends javax.swing.JPanel {
 
-    /** Creates new form jpIOferta */
-    public jpIOferta() {
+    public jpBorraCoche(int idEscuderia) {
         initComponents();
-        listaofertas.setText(Formula1UI.inem.mostrarOfertas());
+        listapilotos.setText(Formula1UI.formula1.escuderias.get(idEscuderia).mostrarCoches()
+         +"El numero total de coches es: " + Formula1UI.formula1.escuderias.get(idEscuderia).getNumCoches());
     }
 
     /** This method is called from within the constructor to
@@ -34,51 +24,49 @@ public class jpIOferta extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaofertas = new javax.swing.JTextArea();
+        listapilotos = new javax.swing.JTextArea();
         Numero = new javax.swing.JTextField();
         N = new javax.swing.JLabel();
         Pregunta = new javax.swing.JLabel();
 
-        listaofertas.setColumns(20);
-        listaofertas.setRows(5);
-        jScrollPane1.setViewportView(listaofertas);
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Borrar Coche"));
 
-        Numero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        listapilotos.setColumns(20);
+        listapilotos.setRows(5);
+        jScrollPane1.setViewportView(listapilotos);
 
         N.setText("Nº");
 
-        Pregunta.setText("¿De que Oferta quieres saber?");
+        Pregunta.setText("¿Qué coche quieres borrar?");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(283, 283, 283)
+                        .addComponent(Pregunta))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(Numero, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(329, 329, 329)
+                        .addGap(343, 343, 343)
                         .addComponent(N))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(Pregunta)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                        .addGap(316, 316, 316)
+                        .addComponent(Numero, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(338, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Pregunta)
-                .addGap(18, 18, 18)
+                .addGap(13, 13, 13)
                 .addComponent(N)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(47, 47, 47)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -87,35 +75,30 @@ public class jpIOferta extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 717, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-public int getNumero () {
-    return Integer.parseInt(Numero.getText());
-}
-
+    public int getId(){
+       return Integer.parseInt(Numero.getText());
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel N;
     private javax.swing.JTextField Numero;
     private javax.swing.JLabel Pregunta;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea listaofertas;
+    private javax.swing.JTextArea listapilotos;
     // End of variables declaration//GEN-END:variables
 
 }

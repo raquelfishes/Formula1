@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 
 public class jpAdmin extends javax.swing.JFrame {
 
-    
     public jpAdmin() {
         initComponents();
         this.setTitle ("Administrador");

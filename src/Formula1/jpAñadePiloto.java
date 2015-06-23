@@ -1,26 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * pEditarAlumno.java
- *
- * Created on 06-dic-2010, 19:22:45
+ * 
+ * 
  */
 
 package Formula1;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-/**
- *
- * @author AlbertoMartin
- */
-public class jpAñadePiloto extends javax.swing.JPanel implements Enum {
 
-    /** Creates new form pEditarAlumno */
+public class jpAñadePiloto extends javax.swing.JPanel{
+
     public jpAñadePiloto() {
         initComponents();
     }
@@ -34,10 +20,6 @@ public class jpAñadePiloto extends javax.swing.JPanel implements Enum {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
         lNombre = new javax.swing.JLabel();
         tNombre = new javax.swing.JTextField();
         lApellidos = new javax.swing.JLabel();
@@ -262,10 +244,6 @@ public class jpAñadePiloto extends javax.swing.JPanel implements Enum {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JLabel lAgresividad;
     private javax.swing.JLabel lAltura;
     private javax.swing.JLabel lApellidos;

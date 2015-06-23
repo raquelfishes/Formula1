@@ -1,20 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * 
  */
-
-/*
- * pArchivo.java
- *
- * Created on 08-dic-2010, 15:22:00
- */
-
 package Formula1;
 
-/**
- *
- * @author July
- */
 public class pArchivo extends javax.swing.JPanel {
 
     /** Creates new form pArchivo */
@@ -109,9 +98,8 @@ public class pArchivo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-public String getDirectorio (){
+    public String getDirectorio (){
         return bDireccion.getText() + ".bin";
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

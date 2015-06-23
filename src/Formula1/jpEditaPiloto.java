@@ -1,9 +1,7 @@
-
 package Formula1;
 
-public class jpEditaPiloto extends javax.swing.JPanel implements Enum{
+public class jpEditaPiloto extends javax.swing.JPanel{
 
-    /** Creates new form jpIEditarUsuario */
     public jpEditaPiloto() {
         initComponents();
     }

@@ -126,7 +126,7 @@ public class Formula1UI extends javax.swing.JFrame {
             if(JOptionPane.showConfirmDialog(this, pConsulta, "Informacion Escuderia",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
                 == JOptionPane.OK_OPTION) {
-                    if ((pConsulta.getNumero()-1<1) || (pConsulta.getNumero()-1>Formula1UI.formula1.escuderias.size())){
+                    if ((pConsulta.getNumero()-1<1) && (pConsulta.getNumero()-1>Formula1UI.formula1.escuderias.size())){
                         jAviso.setText ("");
                         jpEscuderia pEscudria = new jpEscuderia(pConsulta.getNumero());
                         pEscudria.setVisible(true);
