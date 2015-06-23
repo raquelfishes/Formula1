@@ -1,8 +1,3 @@
-/*
- * jpI.java
- *
- * Created on 06-dic-2010, 19:48:51
- */
 
 package Formula1;
 
