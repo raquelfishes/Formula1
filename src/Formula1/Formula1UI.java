@@ -1,8 +1,3 @@
-/*
- * InemUI.java
- *
- * Created on 03-dic-2010, 12:34:22
- */
 
 package Formula1;
 
