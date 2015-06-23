@@ -21,6 +21,12 @@ class CaracteristicasTecnicasCoche{
         aerodinamica += valor;
         neumaticos += valor;
     }
+
+    @Override
+    public String toString() {
+        return "CaracteristicasTecnicasCoche{" + "motor=" + motor + ", aerodinamica=" + aerodinamica + ", neumaticos=" + neumaticos + '}';
+    }
+    
 }
 
 public class Coche {
@@ -47,5 +53,11 @@ public class Coche {
     public void mejorar(){
         caracteristicasTecnicas.mejorar((float) 0.1);
     }
+
+    @Override
+    public String toString() {
+        return "modelo=" + modelo + " " + caracteristicasTecnicas.toString() + " velocidadRecta=" + velocidadRecta + " velocidadCurva=" + velocidadCurva;
+    }
+    
     
 }

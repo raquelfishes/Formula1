@@ -238,17 +238,33 @@ public class jpEscuderia extends javax.swing.JFrame {
 
     private void AccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionActionPerformed
 
-    //Añade Escuderia
-        
-        if(bAnyadirEscuderia.isSelected()){
-            jpAñadeEscuderia pAñade = new jpAñadeEscuderia();
-            if(JOptionPane.showConfirmDialog(this, pAñade, "Añade Escuderia",
+    /* Coche */
+        // Crea Coche
+        if(bAnyadirCoche.isSelected()){
+            jpAñadeCoche pAñade = new jpAñadeCoche();
+            if(JOptionPane.showConfirmDialog(this, pAñade, "Añade Coche",
             JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
-            == JOptionPane.OK_OPTION) {
-                    Escuderia escuderia = new Escuderia(pAñade.getNombre(), pAñade.getPais(),
-                    pAñade.getAnyoFundacion(), pAñade.getPresupuesto(), pAñade.getDirectivos());
-                Formula1UI.formula1.añadirEscuderia(escuderia);
-                Resultados.setText ("La escuderia se ha insertado satisfactoriamente");
+            == JOptionPane.OK_OPTION) {         
+                Coche coche = new Coche(pAñade.getModelo(), pAñade.getCaracteristicasTecnicas());
+                Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).anyadirCoche(coche));
+            }
+        }
+        // Borra Coche
+        else  if(bBorrarCoche.isSelected()){
+            jpBorraCoche pBorrar = new jpBorraCoche(id-1);
+            if(JOptionPane.showConfirmDialog(this, pBorrar, "Regalar Coche",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {         
+                Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).borrarCoche(pBorrar.getId()));
+            }
+        }
+    /* Entrenar */
+        else  if(bEntrenar.isSelected()){
+            jpBorraCoche pBorrar = new jpBorraCoche(id-1);
+            if(JOptionPane.showConfirmDialog(this, pBorrar, "Regalar Coche",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {         
+                Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).borrarCoche(pBorrar.getId()));
             }
         }
     /*

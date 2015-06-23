@@ -1,26 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * pEditarAlumno.java
- *
- * Created on 06-dic-2010, 19:22:45
+ * 
+ * 
  */
 
 package Formula1;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-/**
- *
- * @author AlbertoMartin
- */
-public class jpAñadeEscuderia extends javax.swing.JPanel implements Enum {
 
-    /** Creates new form pEditarAlumno */
+public class jpAñadeEscuderia extends javax.swing.JPanel{
+
     public jpAñadeEscuderia() {
         initComponents();
     }

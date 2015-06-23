@@ -1,5 +1,3 @@
-
-
 package Formula1;
 
 import java.io.*;

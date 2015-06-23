@@ -1,13 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * 
  */
 
 package Formula1;
 
 public class jpBorraPiloto extends javax.swing.JPanel {
 
-    /** Creates new form jpIBorraUsu */
     public jpBorraPiloto() {
         initComponents();
         listapilotos.setText(Formula1UI.formula1.mostrarPilotos()
