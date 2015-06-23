@@ -121,8 +121,8 @@ public class Formula1UI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bEscuderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEscuderiaActionPerformed
-        //jpEscuderia pEscudria = new jpEscuderia();
-        //pEscudria.setVisible(true);
+        jpEscuderia pEscudria = new jpEscuderia();
+        pEscudria.setVisible(true);
     }//GEN-LAST:event_bEscuderiaActionPerformed
 
     private void bMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMundialActionPerformed
