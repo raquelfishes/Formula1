@@ -90,6 +90,7 @@ public class jpBorraCoche extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public int getId(){
+       if (Numero.getText().equals("")) return -1;
        return Integer.parseInt(Numero.getText());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

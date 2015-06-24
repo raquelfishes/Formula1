@@ -15,7 +15,11 @@ class DatosPersonales{
         altura = a;
         peso = p;
     }
-    
+
+    @Override
+    public String toString() {
+        return " edad=" + edad + " altura=" + altura + " peso=" + peso;
+    }  
 }
 
 class CaracteristicasTecnicasPiloto{

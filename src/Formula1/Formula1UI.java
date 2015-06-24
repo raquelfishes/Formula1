@@ -126,17 +126,17 @@ public class Formula1UI extends javax.swing.JFrame {
             if(JOptionPane.showConfirmDialog(this, pConsulta, "Informacion Escuderia",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
                 == JOptionPane.OK_OPTION) {
-                    if ((pConsulta.getNumero()-1<1) && (pConsulta.getNumero()-1>Formula1UI.formula1.escuderias.size())){
+                    if ((pConsulta.getNumero()>0) && (pConsulta.getNumero()<Formula1UI.formula1.escuderias.size()+1)){
                         jAviso.setText ("");
                         jpEscuderia pEscudria = new jpEscuderia(pConsulta.getNumero());
                         pEscudria.setVisible(true);
                     }else{
                         jAviso.setText ("El identificador de escuderia no es correcto");
                     }
-                }
-            }else{
-                jAviso.setText ("No hay escuderias");
             }
+        }else{
+           jAviso.setText ("No hay escuderias");
+        }
     }//GEN-LAST:event_bEscuderiaActionPerformed
 
     private void bMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMundialActionPerformed

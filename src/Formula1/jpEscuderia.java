@@ -1,10 +1,6 @@
 package Formula1;
 
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
 
 public class jpEscuderia extends javax.swing.JFrame {
 
@@ -260,11 +256,32 @@ public class jpEscuderia extends javax.swing.JFrame {
         }
     /* Entrenar */
         else  if(bEntrenar.isSelected()){
-            jpBorraCoche pBorrar = new jpBorraCoche(id-1);
-            if(JOptionPane.showConfirmDialog(this, pBorrar, "Regalar Coche",
+            jpConsultaCircuito pCircuito = new jpConsultaCircuito();
+            if(JOptionPane.showConfirmDialog(this, pCircuito, "Elige Circuito",
             JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
-            == JOptionPane.OK_OPTION) {         
-                Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).borrarCoche(pBorrar.getId()));
+            == JOptionPane.OK_OPTION) { 
+                // Si tenemos presupuesto
+                float canon = Formula1UI.formula1.circuitos.get(pCircuito.getNumero()-1).getCanon();
+                if(Formula1UI.formula1.escuderias.get(id-1).presupuestoCanon(canon)){
+                    jpConsultaCoche pCoche = new jpConsultaCoche(id-1);
+                    if(JOptionPane.showConfirmDialog(this, pCoche, "Elige Coche",
+                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                    == JOptionPane.OK_OPTION) {
+                        jpPilotoEscuderia pPiloto = new jpPilotoEscuderia(id-1);
+                        if(JOptionPane.showConfirmDialog(this, pPiloto, "Elige Piloto",
+                        JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                        == JOptionPane.OK_OPTION) {
+                            boolean correcto =false;
+                            Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).entrenar(pPiloto.getNumero(),pCoche.getId(), correcto));
+                            if(correcto){
+                                Formula1UI.formula1.escuderias.get(id-1).pagarCanon(canon);
+                                Resultados.setText(Resultados.getText()+"\n"+"Has pagado "+canon+" euros por entrenar en este circuito");
+                            }
+                        }
+                    }
+                }else{
+                     Resultados.setText ("No tiene presupuesto para este circuito");   
+                }                   
             }
         }
     /*

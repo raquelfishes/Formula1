@@ -13,7 +13,7 @@ public class Escuderia {
     private String nombre;
     private String pais;
     private int anyoFundacion;
-    private int presupuesto;
+    private float presupuesto;
     private int puntosMundial;
     private String[] directivos;
     private ArrayList<PilotoOficial> pilotosOficiales;
@@ -52,22 +52,33 @@ public class Escuderia {
         }
     }
     
-    public String entrenar(int idPiloto, int idCoche){
+    public String entrenar(int idPiloto, int idCoche, boolean correcto){
         if((idCoche>0) && (idCoche<=coches.size())){
-            if((idPiloto>0) && (idPiloto<=pilotosOficiales.size())){
-                coches.get(idCoche).mejorar();
+            if((idPiloto > 0) && (idPiloto < pilotosOficiales.size()+1)){
+                pilotosOficiales.get(idPiloto-1).mejorar();
+                coches.get(idCoche-1).mejorar();
+                correcto = true;
+                return "El piloto oficial y el coche han mejorado";
+            }else if(idPiloto < (pilotosOficiales.size()+pilotosProbadores.size())){
+                pilotosProbadores.get(idPiloto-pilotosOficiales.size()-1).mejorar();
+                coches.get(idCoche-1).mejorar();
+                correcto = true;
+                return "El piloto probador y el coche han mejorado";
             }
             return "No existe ese identificador de Piloto";
         }
         return "No existe ese identificador de coche";
     }
     
-    public String pagarCanon(int canon){
-        if (canon < presupuesto){
+    public void pagarCanon(float canon){
             presupuesto -= canon;
-            return "Este entrenamiento te ha costado "+canon+" euros";
+    }
+    
+    public boolean presupuestoCanon(float canon){
+        if(canon < presupuesto){
+            return true;
         }
-        return "No tienes dinero suficiente para entrenar en este circuito";
+        return false;
     }
     
     public String anyadirCoche(Coche coche){
@@ -93,6 +104,22 @@ public class Escuderia {
            for (Coche c : coches) { 
                ++id;
                s.append ("Identificador: "+id+" "+c.toString()+"\n");       
+           }
+        return s.toString();
+   }
+   
+    public String mostrarPilotos (){
+        StringBuilder s = new StringBuilder();
+           s.append("Pilotos Oficiales \n");
+           int id=0;
+           for (PilotoOficial p : pilotosOficiales) { 
+               ++id;
+               s.append ("Identificador: "+id+" "+p.toString()+"\n");       
+           }
+           s.append("Pilotos Probadores \n");
+           for (PilotoProbador p : pilotosProbadores) { 
+               ++id;
+               s.append ("Identificador: "+id+" "+p.toString()+"\n");       
            }
         return s.toString();
    }
@@ -131,14 +158,18 @@ public class Escuderia {
         anyoFundacion = a;
     }
     
-    public int getPresupuesto(){
+    public float getPresupuesto(){
         return presupuesto;
     }
-    public void setPresupuesto(int p){
+    public void setPresupuesto(float p){
         presupuesto = p;
     }
     
     public int getNumCoches(){
         return coches.size();
+    }
+    
+    public int getNumPilotos(){
+        return pilotosOficiales.size() + pilotosProbadores.size();
     }
 }
