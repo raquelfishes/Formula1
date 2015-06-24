@@ -333,17 +333,28 @@ public class jpEscuderia extends javax.swing.JFrame {
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
                 == JOptionPane.OK_OPTION) {
                     int idPil = pPiloto.getNumero();
-                    if((idPil>0) && (idPil< Formula1UI.formula1.numeroPilotos())){
+                    int idEsc = pPiloto.getEscuderia();
+                    if( idPil != -1){
                         // Dicidimos si ficharlo como oficial o probador
-                        if(pPiloto.getOficial()){                    
-                            PilotoOficial piloto = new PilotoOficial(Formula1UI.formula1.pilotos.get(idPil-1));
-                            //Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                 
+                        if(pPiloto.getOficial()){
+                            PilotoOficial piloto = new PilotoOficial(Formula1UI.formula1.escuderias.get(idEsc).getOficiales().get(idPil).getPiloto());
+                            if(Formula1UI.formula1.escuderias.get(id-1).posibleFichar(piloto)) 
+                                if(pPiloto.oficial()){
+                                    Formula1UI.formula1.escuderias.get(idEsc).removeOfic(idPil);
+                                }else{
+                                    Formula1UI.formula1.escuderias.get(idEsc).removeProb(idPil);
+                                }
+                            Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                 
                         }else{                   
-                            PilotoProbador piloto = new PilotoProbador(Formula1UI.formula1.pilotos.get(idPil-1));;
-                            //Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                    
-                        }
-                        // Lo quitamos del listado de pilotos libres
-                        Formula1UI.formula1.pilotos.remove(idPil-1);
+                            PilotoProbador piloto = new PilotoProbador(Formula1UI.formula1.escuderias.get(idEsc).getProbadores().get(idPil).getPiloto());
+                            if(Formula1UI.formula1.escuderias.get(id-1).posibleFichar(piloto)) 
+                                if(pPiloto.oficial()){
+                                    Formula1UI.formula1.escuderias.get(idEsc).removeOfic(idPil);
+                                }else{
+                                    Formula1UI.formula1.escuderias.get(idEsc).removeProb(idPil);
+                                }
+                            Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                    
+                        }                       
                     }else{               
                         Resultados.setText("No existe ese identificador de Piloto");
                     }

@@ -28,8 +28,8 @@ public class jpRobarPiloto extends javax.swing.JPanel {
             }
         }
         
-        listapilotos.setText(Formula1UI.formula1.escuderias.get(0).mostrarPilotos()
-         +"El numero total de pilotos es: " + Formula1UI.formula1.escuderias.get(primerId).getNumPilotos());
+        listapilotos.setText(Formula1UI.formula1.escuderias.get(primerId).mostrarOficiales()
+         +"El numero total de pilotos es: " + Formula1UI.formula1.escuderias.get(primerId).getNumOficiales());
     }
 
     /** This method is called from within the constructor to
@@ -261,8 +261,12 @@ public class jpRobarPiloto extends javax.swing.JPanel {
        return jCId.getSelectedIndex();
     }
     
-     public boolean getOficial(){
+    public boolean getOficial(){
        return jCOficial2.isSelected(); 
+    }
+    
+    public boolean oficial(){
+       return jCOficial.isSelected(); 
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
