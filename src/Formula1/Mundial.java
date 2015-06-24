@@ -19,11 +19,17 @@ public class Mundial {
     }
     
     public boolean empezarMundial(String mensaje){
+        boolean b = true;
         for (Escuderia escuderia : escuderias) {
-            
+            if (escuderia.getNumCoches()==0 && escuderia.getNumPilotosOficiales()==0){
+                mensaje += "La escuderia "+escuderia.getNombre()+" ("+escuderia.getIdentificador()+") no tiene suficientes pilotos oficiales o coches.\n";
+                b=false;
+            }
         }
-        
-        return true;
+        if (!b)
+            return false;
+        mensaje = "¡El mundial URJC ha comenzado!";
+        return b;
     }
     
     public void clasificacionPilotos(){
@@ -35,11 +41,18 @@ public class Mundial {
     }
     
     public void empezarCarrera(int i){
+        // Primero cada escuderia paga los canon y al piloto
         for (Escuderia escuderia: escuderias){
-            escuderia.pagarCanon(carreras[i].getCircuito().getCanon());
+            //if (escuderia.presupuestoCanon(carreras[i].getCircuito().getCanon())&& escuderia.presupuestoPiloto(escuderia.getEquipoCarrera(i)))
+            //escuderia.pagarCanon(carreras[i].getCircuito().getCanon());
             //escuderia.pagarPiloto(escuderia.getPilotoCarrera(i));
+            //carreras[i].inscribirPiloto
         }
         //carreras[i]
+        //Estadisticas de cada escuderia
+        for (Escuderia escuderia: escuderias){
+            
+        }
     }
     
     public void mostrarEstadisticasMundial(){

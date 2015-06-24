@@ -7,7 +7,7 @@ package Formula1;
 
 import java.util.ArrayList;
 
-public class Escuderia {
+public class Escuderia implements Comparable<Escuderia>{
     static int contador = 0;
     private int identificador;
     private String nombre;
@@ -15,6 +15,7 @@ public class Escuderia {
     private int anyoFundacion;
     private float presupuesto;
     private int puntosMundial;
+
     private String[] directivos;
     private ArrayList<PilotoOficial> pilotosOficiales;
     private ArrayList<PilotoProbador> pilotosProbadores;
@@ -188,5 +189,20 @@ public class Escuderia {
     
     public int getNumPilotos(){
         return pilotosOficiales.size() + pilotosProbadores.size();
+    }
+    
+    public int getNumPilotosOficiales(){
+        return pilotosOficiales.size();
+    }
+    
+    public int getPuntosMundial() {
+        return puntosMundial;
+    }
+    public void setPuntosMundial(int p) {
+        puntosMundial = p;
+    }
+    
+    public int compareTo(Escuderia o) {
+        return Integer.compare(puntosMundial,o.getPuntosMundial());
     }
 }

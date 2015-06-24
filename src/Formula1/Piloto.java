@@ -47,7 +47,7 @@ class CaracteristicasTecnicasPiloto{
     }
 }
 
-public class Piloto {
+public class Piloto implements Comparable<Piloto>{
     static int contador = 0;
     private int identificador;
     protected String nombre;
@@ -141,4 +141,9 @@ public class Piloto {
     public Piloto getPiloto(){
         return this;
     }
+
+    public int compareTo(Piloto o) {
+        return Integer.compare(puntosMundial,o.getPuntosMundial());
+    }
+    
 }
