@@ -166,5 +166,10 @@ public class Formula1 implements Serializable{
     
     public void crearMundial(){
         mundial = new Mundial(escuderias);
+        Carrera[] carreras = new Carrera[5];
+        Random rand = new Random();
+        for (int i=0; i<5; i++)
+            carreras[i] = new Carrera(circuitos.get(rand.nextInt()%circuitos.size()));
+        mundial.setCarreras(carreras);
     }
 }

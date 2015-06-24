@@ -17,13 +17,14 @@ public class Mundial implements Serializable{
         pilotos = new ArrayList();
     }
     
-    public boolean empezarMundial(String mensaje){
-        boolean b = true;
+    public String empezarMundial(){
+        String mensaje = "";
+        empezado = true;
         for (Escuderia escuderia : escuderias) {
             if (escuderia.getNumCoches()==0 && escuderia.getNumOficiales()==0){
                 //No se puede inscribir la escuderia(le falta un coche o un piloto oficial)
                 mensaje += "La escuderia "+escuderia.getNombre()+" ("+escuderia.getIdentificador()+") no tiene suficientes pilotos oficiales o coches.\n";
-                b=false;
+                empezado=false;
             }
             else{
                 //Se inscribe la escuderia en el mundial
@@ -38,10 +39,11 @@ public class Mundial implements Serializable{
                 }
             }
         }
-        if (!b)
-            return false;
+        if (!empezado){
+            return mensaje;
+        }
         mensaje = "¡El mundial URJC ha comenzado!";
-        return b;
+        return mensaje;
     }
     
     public String empezarCarrera(int i){
@@ -95,6 +97,10 @@ public class Mundial implements Serializable{
 
     public void setEmpezado(boolean empezado) {
         this.empezado = empezado;
+    }
+    
+    public void setCarreras(Carrera[] c){
+        carreras = c;
     }
     
 }

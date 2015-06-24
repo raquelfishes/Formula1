@@ -118,13 +118,7 @@ public class jpMundial extends javax.swing.JFrame {
 
     private void bEmpezarMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarMundialActionPerformed
         String s="";
-        if (Formula1UI.formula1.mundial.empezarMundial(s)){
-            Formula1UI.formula1.mundial.setEmpezado(true);
-        }
-        else{
-            Formula1UI.formula1.mundial.setEmpezado(false);
-        }
-        resultados.setText(s);
+        resultados.setText(Formula1UI.formula1.mundial.empezarMundial());
 }//GEN-LAST:event_bEmpezarMundialActionPerformed
 
     private void bEstadisticasMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEstadisticasMundialActionPerformed
