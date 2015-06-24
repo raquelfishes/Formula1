@@ -312,12 +312,12 @@ public class jpEscuderia extends javax.swing.JFrame {
                     // Decidimos si ficharlo como oficial o probador
                     if(pPiloto.getOficial()){                    
                         PilotoOficial piloto = new PilotoOficial(Formula1UI.formula1.pilotos.get(idPil-1));
-                        Resultados.setText(Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto)); 
                         if(Formula1UI.formula1.escuderias.get(id-1).posibleFichar(piloto)) Formula1UI.formula1.pilotos.remove(idPil-1);
+                        Resultados.setText(Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));               
                     }else{                   
                         PilotoProbador piloto = new PilotoProbador(Formula1UI.formula1.pilotos.get(idPil-1));
-                        Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto)); 
                         if(Formula1UI.formula1.escuderias.get(id-1).posibleFichar(piloto)) Formula1UI.formula1.pilotos.remove(idPil-1);
+                        Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                        
                     }   
                     
                 }else{               
