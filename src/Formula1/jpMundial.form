@@ -64,10 +64,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="Accion1" max="32767" attributes="0"/>
-                      <Component id="Accion2" max="32767" attributes="0"/>
-                      <Component id="Accion" alignment="0" max="32767" attributes="0"/>
-                      <Component id="Accion3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bEstadisticasMundial" max="32767" attributes="0"/>
+                      <Component id="bEstadisticasCarrera" max="32767" attributes="0"/>
+                      <Component id="bEmpezarMundial" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bEmpezarCarrera" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -76,16 +76,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="Accion" min="-2" max="-2" attributes="0"/>
+                  <Component id="bEmpezarMundial" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Accion1" min="-2" max="-2" attributes="0"/>
+                  <Component id="bEstadisticasMundial" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="Accion2" min="-2" max="-2" attributes="0"/>
+                  <Component id="bEstadisticasCarrera" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Accion3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bEmpezarCarrera" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="54" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="93" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -106,36 +106,36 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="Accion">
+        <Component class="javax.swing.JButton" name="bEmpezarMundial">
           <Properties>
             <Property name="text" type="java.lang.String" value="Empezar Mundial"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AccionActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEmpezarMundialActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Accion1">
+        <Component class="javax.swing.JButton" name="bEstadisticasMundial">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estadisticas Mundial"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Accion1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEstadisticasMundialActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Accion2">
+        <Component class="javax.swing.JButton" name="bEstadisticasCarrera">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estadisticas Carrera"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Accion2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEstadisticasCarreraActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Accion3">
+        <Component class="javax.swing.JButton" name="bEmpezarCarrera">
           <Properties>
             <Property name="text" type="java.lang.String" value="Empezar Carrera"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Accion3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEmpezarCarreraActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

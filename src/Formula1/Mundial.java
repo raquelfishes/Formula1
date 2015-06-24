@@ -13,11 +13,17 @@ public class Mundial {
     private ArrayList<Piloto> pilotos;
     private Carrera[] carreras = new Carrera[5];
     
+    public Mundial(ArrayList e){
+        escuderias = e;
+        pilotos = new ArrayList();
+    }
     
-    public Mundial(){}
-    
-    public void empezarMundial(){
+    public boolean empezarMundial(String mensaje){
+        for (Escuderia escuderia : escuderias) {
+            
+        }
         
+        return true;
     }
     
     public void clasificacionPilotos(){
@@ -28,7 +34,19 @@ public class Mundial {
         
     }
     
-    public void empezarCarrera(){
+    public void empezarCarrera(int i){
+        for (Escuderia escuderia: escuderias){
+            escuderia.pagarCanon(carreras[i].getCircuito().getCanon());
+            escuderia.pagarPiloto(escuderia.getPilotoCarrera(i));
+        }
+        carreras[i]
+    }
+    
+    public void mostrarEstadisticasMundial(){
+        
+    }
+    
+    public void mostrarEstadisticasCarrera(){
         
     }
 }
