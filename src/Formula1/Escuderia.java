@@ -7,7 +7,7 @@ package Formula1;
 
 import java.util.ArrayList;
 
-class EquipoCarrera{
+class EquipoCarrera implements Comparable<EquipoCarrera>{
     Circuito circuito;
     Coche coche;
     PilotoOficial piloto;
@@ -20,10 +20,13 @@ class EquipoCarrera{
         this.tiempo = -1;
     }
     
-    @Override
     public String toString() {
         return "circuito=" + circuito + ", coche=" + coche + ", piloto=" + piloto + ", tiempo=" + tiempo;
     }       
+
+    public int compareTo(EquipoCarrera o) {
+        return Float.compare(tiempo,o.tiempo);
+    }
 }
 
 public class Escuderia implements Comparable<Escuderia>{
@@ -44,6 +47,7 @@ public class Escuderia implements Comparable<Escuderia>{
     private ArrayList<PilotoOficial> pilotosOficiales;
     private ArrayList<PilotoProbador> pilotosProbadores;
     private ArrayList<Coche> coches;
+    private ArrayList<EquipoCarrera> equipos;
     
     public Escuderia(String n, String p, int a, int pr, String[] d){
         contador++;
@@ -57,6 +61,7 @@ public class Escuderia implements Comparable<Escuderia>{
         pilotosOficiales = new ArrayList();
         pilotosProbadores = new ArrayList();
         coches = new ArrayList();
+        equipos = new ArrayList();
     }
     
     public String ficharPiloto(PilotoOficial p){
@@ -127,15 +132,26 @@ public class Escuderia implements Comparable<Escuderia>{
         return "No existe ese identificador de coche";
     }
     
-    public void pagarCanon(float canon){
-            presupuesto -= canon;
+    public void pagarValor(float valor){
+            presupuesto -= valor;
     }
     
-    public boolean presupuestoCanon(float canon){
-        if(canon < presupuesto){
+    public boolean presupuestoValor(float valor){
+        if(valor < presupuesto){
             return true;
         }
         return false;
+    }
+    
+    public float getSueldosPilotos(Circuito c){
+        float sueldos = 0;
+        ArrayList<EquipoCarrera> eq = getEquipoCircuito(c);
+        if (eq.size()>0){
+            for (int i=0; i<eq.size(); i++){
+                sueldos+=eq.get(i).piloto.getSueldo();
+            }
+        }
+        return sueldos;
     }
     
     public String anyadirCoche(Coche coche){
@@ -240,8 +256,46 @@ public class Escuderia implements Comparable<Escuderia>{
     public void setPuntosMundial(int p) {
         puntosMundial = p;
     }
+
+    public ArrayList<EquipoCarrera> getEquipos() {
+        return equipos;
+    }
+    
+    public ArrayList<EquipoCarrera> getEquipoCircuito(Circuito c){
+        ArrayList<EquipoCarrera> eq = new ArrayList();
+        for (EquipoCarrera equipo:equipos){
+            if (equipo.circuito == c)
+                eq.add(equipo);
+        }
+        return eq;
+    }
     
     public int compareTo(Escuderia o) {
         return Integer.compare(puntosMundial,o.getPuntosMundial());
+    }
+
+    public String mostrarInformacion() {
+        String s = "Presupuesto: "+presupuesto+"\t Puntos: "+puntosMundial+"\t Puntos de sus pilotos: \n";
+        for(int i=0; i<pilotosOficiales.size(); i++){
+            s += "\t" + pilotosOficiales.get(i).getNombre() + ": " + pilotosOficiales.get(i).getPuntosMundial();
+        }
+        return s;
+    }
+
+    public void crearEquipoCircuito(Circuito circuito) {
+        EquipoCarrera equipo1 = new EquipoCarrera(circuito,coches.get(0),pilotosOficiales.get(0));
+        equipos.add(equipo1);
+        if (coches.size()==2 && pilotosOficiales.size()==2){
+            EquipoCarrera equipo2 = new EquipoCarrera(circuito,coches.get(1),pilotosOficiales.get(1));
+            equipos.add(equipo2);
+        }
+    }
+
+    public boolean tienePiloto(Piloto pil) {
+        for (int i=0; i<pilotosOficiales.size(); i++){
+            if (pilotosOficiales.get(i)==pil)
+                return true;
+        }
+        return false;
     }
 }

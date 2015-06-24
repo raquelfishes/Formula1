@@ -262,7 +262,7 @@ public class jpEscuderia extends javax.swing.JFrame {
             == JOptionPane.OK_OPTION) { 
                 // Si tenemos presupuesto
                 float canon = Formula1UI.formula1.circuitos.get(pCircuito.getNumero()-1).getCanon();
-                if(Formula1UI.formula1.escuderias.get(id-1).presupuestoCanon(canon)){
+                if(Formula1UI.formula1.escuderias.get(id-1).presupuestoValor(canon)){
                     jpConsultaCoche pCoche = new jpConsultaCoche(id-1);
                     if(JOptionPane.showConfirmDialog(this, pCoche, "Elige Coche",
                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
@@ -274,7 +274,7 @@ public class jpEscuderia extends javax.swing.JFrame {
                             boolean correcto =false;
                             Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).entrenar(pPiloto.getNumero(),pCoche.getId(), correcto));
                             if(correcto){
-                                Formula1UI.formula1.escuderias.get(id-1).pagarCanon(canon);
+                                Formula1UI.formula1.escuderias.get(id-1).pagarValor(canon);
                                 Resultados.setText(Resultados.getText()+"\n"+"Has pagado "+canon+" euros por entrenar en este circuito");
                             }
                         }

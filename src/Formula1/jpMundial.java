@@ -1,5 +1,7 @@
 package Formula1;
 
+import javax.swing.JOptionPane;
+
 public class jpMundial extends javax.swing.JFrame {
 
     
@@ -21,7 +23,7 @@ public class jpMundial extends javax.swing.JFrame {
         Agrupados = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Resultados = new javax.swing.JTextArea();
+        resultados = new javax.swing.JTextArea();
         bEmpezarMundial = new javax.swing.JButton();
         bEstadisticasMundial = new javax.swing.JButton();
         bEstadisticasCarrera = new javax.swing.JButton();
@@ -31,9 +33,9 @@ public class jpMundial extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Mundial URJC"));
 
-        Resultados.setColumns(20);
-        Resultados.setRows(5);
-        jScrollPane1.setViewportView(Resultados);
+        resultados.setColumns(20);
+        resultados.setRows(5);
+        jScrollPane1.setViewportView(resultados);
 
         bEmpezarMundial.setText("Empezar Mundial");
         bEmpezarMundial.addActionListener(new java.awt.event.ActionListener() {
@@ -115,19 +117,37 @@ public class jpMundial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bEmpezarMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarMundialActionPerformed
-
+        String s="";
+        if (Formula1UI.formula1.mundial.empezarMundial(s)){
+            Formula1UI.formula1.mundial.setEmpezado(true);
+        }
+        else{
+            Formula1UI.formula1.mundial.setEmpezado(false);
+        }
+        resultados.setText(s);
 }//GEN-LAST:event_bEmpezarMundialActionPerformed
 
     private void bEstadisticasMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEstadisticasMundialActionPerformed
-        // TODO add your handling code here:
+        resultados.setText(Formula1UI.formula1.mundial.mostrarEstadisticasMundial());
     }//GEN-LAST:event_bEstadisticasMundialActionPerformed
 
     private void bEstadisticasCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEstadisticasCarreraActionPerformed
-        // TODO add your handling code here:
+        jpConsultaCarrera pConsulta = new jpConsultaCarrera();
+        if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar carrera",
+           JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                resultados.setText (Formula1UI.formula1.mundial.mostrarEstadisticasCarrera(pConsulta.getNumero()-1));
+            }
     }//GEN-LAST:event_bEstadisticasCarreraActionPerformed
 
     private void bEmpezarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarCarreraActionPerformed
-        // TODO add your handling code here:
+        jpConsultaCarrera pConsulta = new jpConsultaCarrera();
+        if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar carrera",
+           JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                resultados.setText ("Se ha realizado la carrera " + (pConsulta.getNumero()-1) + "\n-" + 
+                    Formula1UI.formula1.mundial.empezarCarrera(pConsulta.getNumero()-1));
+            }
     }//GEN-LAST:event_bEmpezarCarreraActionPerformed
 
     /**
@@ -143,13 +163,13 @@ public class jpMundial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Agrupados;
-    private javax.swing.JTextArea Resultados;
     private javax.swing.JButton bEmpezarCarrera;
     private javax.swing.JButton bEmpezarMundial;
     private javax.swing.JButton bEstadisticasCarrera;
     private javax.swing.JButton bEstadisticasMundial;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea resultados;
     // End of variables declaration//GEN-END:variables
 
 }
