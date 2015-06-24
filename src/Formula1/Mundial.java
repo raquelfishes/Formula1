@@ -59,8 +59,12 @@ public class Mundial implements Serializable{
         // Segundo cada escuderia compite con sus equipos en la carrera
         for (Escuderia escuderia: escuderias){
             if (escuderia.presupuestoValor(carreras[siguienteCarrera].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[siguienteCarrera].getCircuito()))){
-                for (EquipoCarrera equipo:escuderia.getEquipoCircuito(carreras[siguienteCarrera].getCircuito()))
+                for (EquipoCarrera equipo:escuderia.getEquipoCircuito(carreras[siguienteCarrera].getCircuito())){
                     equipo.tiempo = carreras[siguienteCarrera].tiempoPiloto(equipo);
+                    //Mejorar caracteristicas piloto y coche
+                    equipo.piloto.mejorar();
+                    equipo.coche.mejorar();
+                }
             }
         }
         //Rellenar clasificacion 
@@ -68,7 +72,7 @@ public class Mundial implements Serializable{
         //mostrar informacion
         for (Escuderia escuderia: escuderias){
             if (escuderia.presupuestoValor(carreras[siguienteCarrera].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[siguienteCarrera].getCircuito()))){
-                escuderia.mostrarInformacion();
+                s += escuderia.mostrarInformacion()+"\n";
             }
         }
         Collections.sort(escuderias);
@@ -79,7 +83,7 @@ public class Mundial implements Serializable{
     public String mostrarEstadisticasMundial(){
         String s = "";
         for (int i=0; i<escuderias.size(); i++){
-            s+="Posicion: " + (i+1) + "\t" + escuderias.get(i).mostrarInformacion();
+            s+="Posicion: " + (i+1) + "\t" + escuderias.get(i).mostrarInformacion()+"\n";
         }
         return s;
     }

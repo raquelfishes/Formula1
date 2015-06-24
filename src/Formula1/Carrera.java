@@ -49,7 +49,7 @@ public class Carrera implements Serializable{
     public String mostrarInformacion() {
         String s="";
         for (int i=0; i<clasificacion.size(); i++){
-            s+="Posicion: "+(i+1)+"\t Piloto: "+clasificacion.get(i).piloto.getNombre()+"\t Tiempo: "+clasificacion.get(i).tiempo;
+            s+="Posicion: "+(i+1)+"\t Piloto: "+clasificacion.get(i).piloto.getNombre()+"\t Tiempo: "+clasificacion.get(i).tiempo+"\n";
         }
         return s;
     }

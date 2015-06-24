@@ -136,7 +136,7 @@ public class jpMundial extends javax.swing.JFrame {
     }//GEN-LAST:event_bEstadisticasCarreraActionPerformed
 
     private void bEmpezarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarCarreraActionPerformed
-        if (Formula1UI.formula1.mundial.getSiguienteCarrera()+1 < 5)
+        if (Formula1UI.formula1.mundial.getSiguienteCarrera()+1 < 6)
             resultados.setText ("Se ha realizado la carrera " + (Formula1UI.formula1.mundial.getSiguienteCarrera()+1) + "\n" + 
                 Formula1UI.formula1.mundial.empezarCarrera());
         else
