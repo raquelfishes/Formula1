@@ -49,7 +49,8 @@ class CaracteristicasTecnicasPiloto implements Serializable{
     }
 }
 
-public class Piloto implements Serializable{
+public class Piloto implements Serializable, Comparable<Piloto>{
+
     static int contador = 0;
     private int identificador;
     protected String nombre;
@@ -143,4 +144,9 @@ public class Piloto implements Serializable{
     public Piloto getPiloto(){
         return this;
     }
+
+    public int compareTo(Piloto o) {
+        return Integer.compare(puntosMundial,o.getPuntosMundial());
+    }
+    
 }

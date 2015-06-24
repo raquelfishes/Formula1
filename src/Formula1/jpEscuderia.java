@@ -275,7 +275,7 @@ public class jpEscuderia extends javax.swing.JFrame {
                                 boolean correcto =false;
                                 Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).entrenar(pPiloto.getNumero(),pCoche.getId(), correcto));
                                 if(correcto){
-                                    Formula1UI.formula1.escuderias.get(id-1).pagarCanon(canon);
+                                    Formula1UI.formula1.escuderias.get(id-1).pagarValor(canon);
                                     Resultados.setText(Resultados.getText()+"\n"+"Has pagado "+canon+" euros por entrenar en este circuito");
                                 }
                             }
