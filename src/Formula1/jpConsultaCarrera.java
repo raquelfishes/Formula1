@@ -8,8 +8,7 @@ public class jpConsultaCarrera extends javax.swing.JPanel {
 
     public jpConsultaCarrera() {
         initComponents();
-        listaescuderias.setText(Formula1UI.formula1.mostrarEscuderias()
-         +"El numero total de escuderias es: " + Formula1UI.formula1.escuderias.size());
+        listaescuderias.setText(Formula1UI.formula1.mundial.mostrarCarreras());
     }
 
     /** This method is called from within the constructor to
@@ -28,7 +27,7 @@ public class jpConsultaCarrera extends javax.swing.JPanel {
         N = new javax.swing.JLabel();
         Pregunta = new javax.swing.JLabel();
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Consultar Escuderia"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Consultar Carrera"));
 
         listaescuderias.setColumns(20);
         listaescuderias.setRows(5);
@@ -36,7 +35,7 @@ public class jpConsultaCarrera extends javax.swing.JPanel {
 
         N.setText("Nº");
 
-        Pregunta.setText("¿Qué escuderia quieres consultar?");
+        Pregunta.setText("¿Qué carrera quieres consultar?");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,7 +53,7 @@ public class jpConsultaCarrera extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(316, 316, 316)
                         .addComponent(Numero, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

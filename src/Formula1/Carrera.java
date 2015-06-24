@@ -16,6 +16,7 @@ public class Carrera implements Serializable{
     
     public Carrera(Circuito c){
         circuito = c;
+        clasificacion = new ArrayList();
     }
     
     public float tiempoPiloto(EquipoCarrera equipo){
@@ -30,10 +31,13 @@ public class Carrera implements Serializable{
     
     public void rellenarClasificacion(ArrayList<Escuderia> escuderias){
         for (int i=0; i<puntos.length; i++){
-            clasificacion.get(i).piloto.setPuntosMundial(clasificacion.get(i).piloto.getPuntosMundial()+puntos[i]);
-            for (Escuderia escuderia:escuderias){
-                if (escuderia.tienePiloto(clasificacion.get(i).piloto))
-                    escuderia.setPuntosMundial(escuderia.getPuntosMundial()+puntos[i]);
+            if (i<clasificacion.size()){
+                int punto = clasificacion.get(i).piloto.getPuntosMundial();
+                clasificacion.get(i).piloto.setPuntosMundial(punto+puntos[i]);
+                for (Escuderia escuderia:escuderias){
+                    if (escuderia.tienePiloto(clasificacion.get(i).piloto))
+                        escuderia.setPuntosMundial(escuderia.getPuntosMundial()+puntos[i]);
+                }
             }
         }
     }   
@@ -45,8 +49,14 @@ public class Carrera implements Serializable{
     public String mostrarInformacion() {
         String s="";
         for (int i=0; i<clasificacion.size(); i++){
-            s+="Posicion: "+i+"\t Piloto: "+clasificacion.get(i).piloto.getNombre()+"\t Tiempo: "+clasificacion.get(i).tiempo;
+            s+="Posicion: "+(i+1)+"\t Piloto: "+clasificacion.get(i).piloto.getNombre()+"\t Tiempo: "+clasificacion.get(i).tiempo;
         }
         return s;
     }
+
+    public String toString() {
+        return "\tCircuito: " + circuito.getNombre();
+    }
+    
+    
 }

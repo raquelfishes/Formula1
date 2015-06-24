@@ -118,6 +118,7 @@ public class jpMundial extends javax.swing.JFrame {
 
     private void bEmpezarMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarMundialActionPerformed
         String s="";
+        Formula1UI.formula1.mundial.setSiguienteCarrera(0);
         resultados.setText(Formula1UI.formula1.mundial.empezarMundial());
 }//GEN-LAST:event_bEmpezarMundialActionPerformed
 
@@ -135,13 +136,12 @@ public class jpMundial extends javax.swing.JFrame {
     }//GEN-LAST:event_bEstadisticasCarreraActionPerformed
 
     private void bEmpezarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEmpezarCarreraActionPerformed
-        jpConsultaCarrera pConsulta = new jpConsultaCarrera();
-        if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar carrera",
-           JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
-            == JOptionPane.OK_OPTION) {
-                resultados.setText ("Se ha realizado la carrera " + (pConsulta.getNumero()-1) + "\n-" + 
-                    Formula1UI.formula1.mundial.empezarCarrera(pConsulta.getNumero()-1));
-            }
+        if (Formula1UI.formula1.mundial.getSiguienteCarrera()+1 < 5)
+            resultados.setText ("Se ha realizado la carrera " + (Formula1UI.formula1.mundial.getSiguienteCarrera()+1) + "\n" + 
+                Formula1UI.formula1.mundial.empezarCarrera());
+        else
+            resultados.setText("El mundial ya ha terminado.");
+        
     }//GEN-LAST:event_bEmpezarCarreraActionPerformed
 
     /**
