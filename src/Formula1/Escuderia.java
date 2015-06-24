@@ -343,4 +343,20 @@ public class Escuderia implements Serializable, Comparable<Escuderia>{
     public int getNumProbadores(){
         return pilotosProbadores.size();
     }
+    
+    public ArrayList<PilotoOficial> getOficiales(){
+        return pilotosOficiales;
+    }
+    
+    public ArrayList<PilotoProbador> getProbadores(){
+        return pilotosProbadores;
+    }
+    
+    public void removeOfic(int piloto){
+        pilotosOficiales.remove(piloto);
+    }
+    
+    public void removeProb(int piloto){
+        pilotosProbadores.remove(piloto);
+    } 
 }
