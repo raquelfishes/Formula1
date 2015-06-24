@@ -5,7 +5,9 @@
  */
 package Formula1;
 
-class DatosPersonales{
+import java.io.Serializable;
+
+class DatosPersonales implements Serializable{
     int edad;
     float altura;
     float peso;
@@ -22,7 +24,7 @@ class DatosPersonales{
     }     
 }
 
-class CaracteristicasTecnicasPiloto{
+class CaracteristicasTecnicasPiloto implements Serializable{
     float reflejos;
     float agresividad;
     float paciencia;
@@ -47,7 +49,7 @@ class CaracteristicasTecnicasPiloto{
     }
 }
 
-public class Piloto {
+public class Piloto implements Serializable{
     static int contador = 0;
     private int identificador;
     protected String nombre;
@@ -72,7 +74,7 @@ public class Piloto {
     }
     
     public String toString(){
-        return "   Identificador: " + identificador + " Nombre: " + nombre + " Apellidos: " + apellidos + 
+        return "  Identificador: " + identificador + " Nombre: " + nombre + " Apellidos: " + apellidos + 
                 " Datos Personales: " + "edad, " + datosPersonales.edad + "altura, " + datosPersonales.altura + "peso, " + datosPersonales.peso + 
                 " Puntos Mundial: " + puntosMundial + " Sueldo: " + sueldo + 
                 " Caracteristicas Tecnicas: " + "reflejos, " + caracteristicasTecnicas.reflejos + "agresividad, " + caracteristicasTecnicas.agresividad + 

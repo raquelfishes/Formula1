@@ -5,9 +5,10 @@
  */
 package Formula1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Mundial {
+public class Mundial implements Serializable{
     
     private ArrayList<Escuderia> escuderias;
     private ArrayList<Piloto> pilotos;

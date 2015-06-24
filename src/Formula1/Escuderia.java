@@ -5,9 +5,10 @@
  */
 package Formula1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-class EquipoCarrera{
+class EquipoCarrera implements Serializable{
     Circuito circuito;
     Coche coche;
     PilotoOficial piloto;
@@ -26,7 +27,7 @@ class EquipoCarrera{
     }       
 }
 
-public class Escuderia {
+public class Escuderia implements Serializable{
     static int contador = 0;
     final int MAX_COCHES = 2;
     final int MAX_PILOTOS_OFIC = 2;
@@ -129,8 +130,8 @@ public class Escuderia {
             presupuesto -= canon;
     }
     
-    public boolean presupuestoCanon(float canon){
-        if(canon < presupuesto){
+    public boolean presupuestoValor(float valor){
+        if(valor < presupuesto){
             return true;
         }
         return false;
@@ -172,6 +173,28 @@ public class Escuderia {
                s.append ("Identificador: "+id+" "+p.toString()+"\n");       
            }
            s.append("Pilotos Probadores \n");
+           for (PilotoProbador p : pilotosProbadores) { 
+               ++id;
+               s.append ("Identificador: "+id+" "+p.toString()+"\n");       
+           }
+        return s.toString();
+   }
+    
+   public String mostrarOficiales (){
+           StringBuilder s = new StringBuilder();
+           s.append("Pilotos Oficiales \n");
+           int id=0;
+           for (PilotoOficial p : pilotosOficiales) { 
+               ++id;
+               s.append ("Identificador: "+id+" "+p.toString()+"\n");       
+           }
+        return s.toString();
+   }
+   
+   public String mostrarProbadores (){
+        StringBuilder s = new StringBuilder();
+           s.append("Pilotos Oficiales \n");
+           int id=0;
            for (PilotoProbador p : pilotosProbadores) { 
                ++id;
                s.append ("Identificador: "+id+" "+p.toString()+"\n");       
@@ -226,5 +249,13 @@ public class Escuderia {
     
     public int getNumPilotos(){
         return pilotosOficiales.size() + pilotosProbadores.size();
+    }
+    
+    public int getNumOficiales(){
+        return pilotosOficiales.size();
+    }
+    
+    public int getNumProbadores(){
+        return pilotosProbadores.size();
     }
 }

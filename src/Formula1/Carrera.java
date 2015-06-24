@@ -5,9 +5,10 @@
  */
 package Formula1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Carrera {
+public class Carrera implements Serializable{
     Circuito circuito;
     private int[] puntos = {25, 18, 15, 12, 10, 8, 6, 4, 2, 1};
     ArrayList<Piloto> clasificacion;

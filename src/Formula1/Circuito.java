@@ -5,9 +5,10 @@
  */
 package Formula1;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Circuito {
+public class Circuito implements Serializable{
     static int contador = 0;
     private int identificador;
     private String nombre;
