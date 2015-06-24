@@ -297,39 +297,52 @@ public class jpEscuderia extends javax.swing.JFrame {
                 if(piloto != null) Formula1UI.formula1.añadirPiloto(piloto);
             }
         }
-    /*
-    //Modificar Escuderia
-        else if(bModificarEscuderia.isSelected()){
-          if(!Formula1UI.formula1.escuderias.isEmpty()){
-            jpEditaEscuderia pEdita = new jpEditaEscuderia();
-            if(JOptionPane.showConfirmDialog(this, pEdita, "Modificar Escuderia",
+        // Fichar piloto libre
+        else if(bFicharPilotoLibre.isSelected()){
+            jpFicharPiloto pPiloto = new jpFicharPiloto();
+            if(JOptionPane.showConfirmDialog(this, pPiloto, "Ficha a Piloto",
             JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
             == JOptionPane.OK_OPTION) {
-                try {
-                    Formula1UI.formula1.modificarEscuderia(pEdita.getNumero()-1, pEdita.getNombre(), pEdita.getPais(),
-                            pEdita.getAnyoFundacion(), pEdita.getPresupuesto());
-                } catch (ParseException ex) {
-                    Logger.getLogger(jpEscuderia.class.getName()).log(Level.SEVERE, null, ex);
+                int idPil = pPiloto.getNumero();
+                if((idPil>0) && (idPil< Formula1UI.formula1.numeroPilotos())){
+                    // Dicidimos si ficharlo como oficial o probador
+                    if(pPiloto.getOficial()){                    
+                        PilotoOficial piloto = new PilotoOficial(Formula1UI.formula1.pilotos.get(idPil-1));
+                        Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                 
+                    }else{                   
+                        PilotoProbador piloto = new PilotoProbador(Formula1UI.formula1.pilotos.get(idPil-1));;
+                        Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                    
+                    }
+                    // Lo quitamos del listado de pilotos libres
+                    Formula1UI.formula1.pilotos.remove(idPil-1);
+                }else{               
+                    Resultados.setText("No existe ese identificador de Piloto");
                 }
-                Resultados.setText ("La escuderia se ha modificado satisfactoriamente");
             }
-          }
         }
-    //Borrar Escuderia
-        else if(bBorrarEscuderia.isSelected()){
-          if(!Formula1UI.formula1.escuderias.isEmpty()){
-            jpBorraEscuderia pBorra = new jpBorraEscuderia();
-            if(JOptionPane.showConfirmDialog(this, pBorra, "Borrar Escuderia",
-                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
-                == JOptionPane.OK_OPTION) {
-                    Escuderia escuderia=Formula1UI.formula1.escuderias.get(pBorra.getNumero()-1);
-                    Formula1UI.formula1.borrarEscuderia(escuderia);
-                    Resultados.setText ("La escuderia se ha borrado satisfactoriamente");
+        // Robar piloto a otra escudería
+        else if(bFicharPilotoOtra.isSelected()){
+            jpFicharPiloto pPiloto = new jpFicharPiloto();
+            if(JOptionPane.showConfirmDialog(this, pPiloto, "Ficha a Piloto",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                int idPil = pPiloto.getNumero();
+                if((idPil>0) && (idPil< Formula1UI.formula1.numeroPilotos())){
+                    // Dicidimos si ficharlo como oficial o probador
+                    if(pPiloto.getOficial()){                    
+                        PilotoOficial piloto = new PilotoOficial(Formula1UI.formula1.pilotos.get(idPil-1));
+                        Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                 
+                    }else{                   
+                        PilotoProbador piloto = new PilotoProbador(Formula1UI.formula1.pilotos.get(idPil-1));;
+                        Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).ficharPiloto(piloto));                    
+                    }
+                    // Lo quitamos del listado de pilotos libres
+                    Formula1UI.formula1.pilotos.remove(idPil-1);
+                }else{               
+                    Resultados.setText("No existe ese identificador de Piloto");
                 }
-            }else{
-              Resultados.setText ("No hay escuderias");
             }
-        }*/
+        }
     /* Escuderia */
         // Info Escuderia
         else if(bInfoEscuderia.isSelected()){

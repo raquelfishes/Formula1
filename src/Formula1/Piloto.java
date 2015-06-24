@@ -101,7 +101,7 @@ public class Piloto implements Comparable<Piloto>{
         nombre = s;
     }
     
-    public String setApellidos(){
+    public String getApellidos(){
         return apellidos;
     }
     public void setApellidos(String s){
