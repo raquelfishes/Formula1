@@ -79,10 +79,28 @@ public class Escuderia implements Serializable, Comparable<Escuderia>{
         if(presupuesto < p.getSueldo()){
             return "No tienes presupuesto suficiente para fichar a este corredor";
         }else if(pilotosProbadores.size() < MAX_PILOTOS_PROB){
-            pilotosProbadores.add(p);
+            pilotosProbadores.add(p);    
             return "Has fichado a "+p.getNombre()+" como piloto probador.";
         }
         return "Tienes el máximo de pilotos probadores, no puedes fichar";     
+    }
+    
+    public boolean posibleFichar(PilotoProbador p){
+        if(presupuesto < p.getSueldo()){
+            return false;
+        }else if(pilotosProbadores.size() < MAX_PILOTOS_PROB){       
+            return true;
+        }
+        return false;     
+    }
+    
+    public boolean posibleFichar(PilotoOficial p){
+        if(presupuesto < p.getSueldo()){
+            return false;
+        }else if(pilotosOficiales.size() < MAX_PILOTOS_OFIC){       
+            return true;
+        }
+        return false;     
     }
     
     public void intercambiarPiloto(){

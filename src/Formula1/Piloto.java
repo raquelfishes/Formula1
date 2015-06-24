@@ -76,10 +76,10 @@ public class Piloto implements Serializable, Comparable<Piloto>{
     
     public String toString(){
         return "  Identificador: " + identificador + " Nombre: " + nombre + " Apellidos: " + apellidos + 
-                " Datos Personales: " + "edad, " + datosPersonales.edad + "altura, " + datosPersonales.altura + "peso, " + datosPersonales.peso + 
+                " Datos Personales: " + "edad, " + datosPersonales.edad + " altura, " + datosPersonales.altura + " peso, " + datosPersonales.peso + 
                 " Puntos Mundial: " + puntosMundial + " Sueldo: " + sueldo + 
-                " Caracteristicas Tecnicas: " + "reflejos, " + caracteristicasTecnicas.reflejos + "agresividad, " + caracteristicasTecnicas.agresividad + 
-                "paciencia, " + caracteristicasTecnicas.paciencia +  "valentia, " + caracteristicasTecnicas.valentia + "\n";
+                " Caracteristicas Tecnicas: " + "reflejos, " + caracteristicasTecnicas.reflejos + " agresividad, " + caracteristicasTecnicas.agresividad + 
+                " paciencia, " + caracteristicasTecnicas.paciencia +  " valentia, " + caracteristicasTecnicas.valentia + "\n";
     }
     
     // Metodos abstractos

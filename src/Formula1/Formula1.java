@@ -111,7 +111,7 @@ public class Formula1 implements Serializable{
         int p=0;
            for (Piloto pi : pilotos) {
                p++;           
-               s.append(p).append (pi.toString());
+               s.append("Nº "+p).append (pi.toString());
            }
         return s.toString();
    }
@@ -157,7 +157,7 @@ public class Formula1 implements Serializable{
         int c=0;
            for (Circuito ci : circuitos) {
                c++;           
-               s.append(c).append (ci.toString());
+               s.append("Nº "+c).append (ci.toString());
            }
         return s.toString();
    }

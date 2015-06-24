@@ -19,7 +19,7 @@ public class jpRobarPiloto extends javax.swing.JPanel {
         
         int primerId = 0;
         if (idEscuderia-1 == 0) ++primerId;
-        
+        jCId.removeAllItems();
         if(Formula1UI.formula1.escuderias.get(primerId).getNumOficiales() == 0){
             jCId.addItem(0);
         }else{
@@ -189,7 +189,7 @@ public class jpRobarPiloto extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCEscuderiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCEscuderiasActionPerformed
-        jCId.removeAll();
+        jCId.removeAllItems();
         int id = jCEscuderias.getSelectedIndex();
         if (id >= idEsc) ++id;
         
@@ -217,7 +217,7 @@ public class jpRobarPiloto extends javax.swing.JPanel {
     }//GEN-LAST:event_jCEscuderiasActionPerformed
 
     private void jCOficialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCOficialActionPerformed
-        jCId.removeAll();
+        jCId.removeAllItems();
         int id = jCEscuderias.getSelectedIndex();
         if (id >= idEsc) ++id;
         
@@ -234,7 +234,7 @@ public class jpRobarPiloto extends javax.swing.JPanel {
     }//GEN-LAST:event_jCOficialActionPerformed
 
     private void jCProbadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCProbadorActionPerformed
-        jCId.removeAll();
+        jCId.removeAllItems();
         int id = jCEscuderias.getSelectedIndex();
         if (id >= idEsc) ++id;
         

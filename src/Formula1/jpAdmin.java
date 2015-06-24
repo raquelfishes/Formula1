@@ -288,7 +288,7 @@ public class jpAdmin extends javax.swing.JFrame {
             if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar Escuderia",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
                 == JOptionPane.OK_OPTION) {
-                    if ((pConsulta.getNumero()-1<1) || (pConsulta.getNumero()-1>Formula1UI.formula1.escuderias.size())){
+                    if ((pConsulta.getNumero()>0) && (pConsulta.getNumero()<Formula1UI.formula1.numeroEscuderias()+1)){
                         Resultados.setText ("");
                         Escuderia escuderia=Formula1UI.formula1.escuderias.get(pConsulta.getNumero()-1);
                         Resultados.setText (escuderia.toString());
@@ -352,9 +352,13 @@ public class jpAdmin extends javax.swing.JFrame {
             if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar Piloto",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
                 == JOptionPane.OK_OPTION) {
-                    Piloto piloto=Formula1UI.formula1.pilotos.get(pConsulta.getNumero()-1);
-                    Piloto x= Formula1UI.formula1.consultarPiloto(piloto);
-                    Resultados.setText (x.toString());
+                    if ((pConsulta.getNumero()>0) && (pConsulta.getNumero()<Formula1UI.formula1.numeroPilotos()+1)){
+                        Piloto piloto=Formula1UI.formula1.pilotos.get(pConsulta.getNumero()-1);
+                        Piloto x= Formula1UI.formula1.consultarPiloto(piloto);
+                        Resultados.setText (x.toString());
+                    }else{
+                        Resultados.setText ("El identificador de piloto no es correcto");
+                    }
                 }
             }else{
                 Resultados.setText ("No hay pilotos");
@@ -412,9 +416,13 @@ public class jpAdmin extends javax.swing.JFrame {
             if(JOptionPane.showConfirmDialog(this, pConsulta, "Consultar Circuito",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
                 == JOptionPane.OK_OPTION) {
-                    Circuito circuito=Formula1UI.formula1.circuitos.get(pConsulta.getNumero()-1);
-                    Circuito x= Formula1UI.formula1.consultarCircuito(circuito);
-                    Resultados.setText (x.toString());
+                    if ((pConsulta.getNumero()>0) && (pConsulta.getNumero()<Formula1UI.formula1.numeroCircuitos()+1)){
+                        Circuito circuito=Formula1UI.formula1.circuitos.get(pConsulta.getNumero()-1);
+                        Circuito x= Formula1UI.formula1.consultarCircuito(circuito);
+                        Resultados.setText (x.toString());
+                    }else{
+                        Resultados.setText ("El identificador de circuito no es correcto");
+                    }
                 }
             }else{
                 Resultados.setText ("No hay circuitos");
