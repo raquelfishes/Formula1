@@ -2,7 +2,6 @@
  * 
  *
  */
-
 package Formula1;
 
 public class jpConsultaCircuito extends javax.swing.JPanel {

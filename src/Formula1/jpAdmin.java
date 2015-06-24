@@ -1,4 +1,3 @@
-
 package Formula1;
 
 import java.text.ParseException;

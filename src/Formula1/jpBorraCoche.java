@@ -2,7 +2,6 @@
  * 
  * 
  */
-
 package Formula1;
 
 public class jpBorraCoche extends javax.swing.JPanel {

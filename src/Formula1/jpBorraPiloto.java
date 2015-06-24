@@ -2,7 +2,6 @@
  * 
  * 
  */
-
 package Formula1;
 
 public class jpBorraPiloto extends javax.swing.JPanel {

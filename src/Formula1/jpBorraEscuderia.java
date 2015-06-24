@@ -1,8 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * 
  */
-
 package Formula1;
 
 public class jpBorraEscuderia extends javax.swing.JPanel {

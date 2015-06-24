@@ -2,7 +2,6 @@
  * 
  * 
  */
-
 package Formula1;
 
 public class jpConsultaEscuderia extends javax.swing.JPanel {

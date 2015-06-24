@@ -2,7 +2,6 @@
  * 
  * 
  */
-
 package Formula1;
 
 public class jpAñadeEscuderia extends javax.swing.JPanel{

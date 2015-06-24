@@ -2,7 +2,6 @@
  * 
  * 
  */
-
 package Formula1;
 
 public class jpAñadeCircuito extends javax.swing.JPanel{

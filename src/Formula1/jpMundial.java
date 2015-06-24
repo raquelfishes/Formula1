@@ -1,6 +1,4 @@
-
 package Formula1;
-
 
 public class jpMundial extends javax.swing.JFrame {
 
