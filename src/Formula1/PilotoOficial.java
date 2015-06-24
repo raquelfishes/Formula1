@@ -5,6 +5,8 @@
  */
 package Formula1;
 
+import java.io.Serializable;
+
 public class PilotoOficial extends Piloto{
     
     int plusPeligrosidad = 50;

@@ -1,10 +1,11 @@
 
 package Formula1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Mundial {
+public class Mundial implements Serializable{
     
     private ArrayList<Escuderia> escuderias;
     private ArrayList<Piloto> pilotos;
@@ -19,7 +20,7 @@ public class Mundial {
     public boolean empezarMundial(String mensaje){
         boolean b = true;
         for (Escuderia escuderia : escuderias) {
-            if (escuderia.getNumCoches()==0 && escuderia.getNumPilotosOficiales()==0){
+            if (escuderia.getNumCoches()==0 && escuderia.getNumOficiales()==0){
                 //No se puede inscribir la escuderia(le falta un coche o un piloto oficial)
                 mensaje += "La escuderia "+escuderia.getNombre()+" ("+escuderia.getIdentificador()+") no tiene suficientes pilotos oficiales o coches.\n";
                 b=false;

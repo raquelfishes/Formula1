@@ -5,9 +5,11 @@
  */
 package Formula1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-class EquipoCarrera implements Comparable<EquipoCarrera>{
+class EquipoCarrera implements Serializable, Comparable<EquipoCarrera>{
+
     Circuito circuito;
     Coche coche;
     PilotoOficial piloto;
@@ -29,8 +31,7 @@ class EquipoCarrera implements Comparable<EquipoCarrera>{
     }
 }
 
-public class Escuderia implements Comparable<Escuderia>{
-    
+public class Escuderia implements Serializable, Comparable<Escuderia>{
     static int contador = 0;
     final int MAX_COCHES = 2;
     final int MAX_PILOTOS_OFIC = 2;
@@ -197,6 +198,28 @@ public class Escuderia implements Comparable<Escuderia>{
         return s.toString();
    }
     
+   public String mostrarOficiales (){
+           StringBuilder s = new StringBuilder();
+           s.append("Pilotos Oficiales \n");
+           int id=0;
+           for (PilotoOficial p : pilotosOficiales) { 
+               ++id;
+               s.append ("Identificador: "+id+" "+p.toString()+"\n");       
+           }
+        return s.toString();
+   }
+   
+   public String mostrarProbadores (){
+        StringBuilder s = new StringBuilder();
+           s.append("Pilotos Oficiales \n");
+           int id=0;
+           for (PilotoProbador p : pilotosProbadores) { 
+               ++id;
+               s.append ("Identificador: "+id+" "+p.toString()+"\n");       
+           }
+        return s.toString();
+   }
+    
     public String toString(){
         return "Identificador: " + identificador + " Nombre: " + nombre + " Pais: " + pais + 
                 " Año Fundacion: " + anyoFundacion + " Presupuesto: " + presupuesto + " FPuntos Mundial: " + puntosMundial +"\n";
@@ -246,10 +269,6 @@ public class Escuderia implements Comparable<Escuderia>{
         return pilotosOficiales.size() + pilotosProbadores.size();
     }
     
-    public int getNumPilotosOficiales(){
-        return pilotosOficiales.size();
-    }
-    
     public int getPuntosMundial() {
         return puntosMundial;
     }
@@ -297,5 +316,13 @@ public class Escuderia implements Comparable<Escuderia>{
                 return true;
         }
         return false;
+    }
+    
+    public int getNumOficiales(){
+        return pilotosOficiales.size();
+    }
+    
+    public int getNumProbadores(){
+        return pilotosProbadores.size();
     }
 }

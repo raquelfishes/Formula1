@@ -5,7 +5,9 @@
  */
 package Formula1;
 
-class CaracteristicasTecnicasCoche{
+import java.io.Serializable;
+
+class CaracteristicasTecnicasCoche implements Serializable{
     float motor;
     float aerodinamica;
     float neumaticos;
@@ -29,7 +31,7 @@ class CaracteristicasTecnicasCoche{
     
 }
 
-public class Coche {
+public class Coche implements Serializable{
     private String modelo;
     private CaracteristicasTecnicasCoche caracteristicasTecnicas;
     private float velocidadRecta;

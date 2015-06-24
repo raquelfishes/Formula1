@@ -98,7 +98,11 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
+<<<<<<< HEAD
             <Component class="javax.swing.JTextArea" name="resultados">
+=======
+            <Component class="javax.swing.JTextArea" name="Resultados">
+>>>>>>> 580d7a8a42033bb813d1c0dd5ab33d6d939cb2c0
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
