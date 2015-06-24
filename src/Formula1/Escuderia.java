@@ -7,8 +7,31 @@ package Formula1;
 
 import java.util.ArrayList;
 
+class EquipoCarrera{
+    Circuito circuito;
+    Coche coche;
+    PilotoOficial piloto;
+    float tiempo = -1;
+
+    public EquipoCarrera(Circuito circuito, Coche coche, PilotoOficial piloto) {
+        this.circuito = circuito;
+        this.coche = coche;
+        this.piloto = piloto;
+        this.tiempo = -1;
+    }
+    
+    @Override
+    public String toString() {
+        return "circuito=" + circuito + ", coche=" + coche + ", piloto=" + piloto + ", tiempo=" + tiempo;
+    }       
+}
+
 public class Escuderia {
     static int contador = 0;
+    final int MAX_COCHES = 2;
+    final int MAX_PILOTOS_OFIC = 2;
+    final int MAX_PILOTOS_PROB = 2;
+    
     private int identificador;
     private String nombre;
     private String pais;
@@ -19,7 +42,6 @@ public class Escuderia {
     private ArrayList<PilotoOficial> pilotosOficiales;
     private ArrayList<PilotoProbador> pilotosProbadores;
     private ArrayList<Coche> coches;
-    final int MAX_COCHES = 2;
     
     public Escuderia(String n, String p, int a, int pr, String[] d){
         contador++;
@@ -35,8 +57,24 @@ public class Escuderia {
         coches = new ArrayList();
     }
     
-    public void ficharPiloto(Piloto p){
-        
+    public String ficharPiloto(PilotoOficial p){
+        if(presupuesto < p.getSueldo()){
+            return "No tienes presupuesto suficiente para fichar a este corredor";
+        }else if(pilotosOficiales.size() < MAX_PILOTOS_OFIC){
+            pilotosOficiales.add(p);
+            return "Has fichado a "+p.getNombre()+" como piloto oficial.";
+        }
+        return "Tienes el máximo de pilotos oficiales, no puedes fichar";
+    }
+    
+    public String ficharPiloto(PilotoProbador p){
+        if(presupuesto < p.getSueldo()){
+            return "No tienes presupuesto suficiente para fichar a este corredor";
+        }else if(pilotosProbadores.size() < MAX_PILOTOS_PROB){
+            pilotosProbadores.add(p);
+            return "Has fichado a "+p.getNombre()+" como piloto probador.";
+        }
+        return "Tienes el máximo de pilotos probadores, no puedes fichar";     
     }
     
     public void intercambiarPiloto(){
@@ -46,7 +84,7 @@ public class Escuderia {
     public String descartarPiloto(int idPiloto, Piloto piloto){
             if((idPiloto > 0) && (idPiloto < pilotosOficiales.size()+1)){
                 if (pilotosOficiales.size() < 2){
-                    return "Debes mantener al menos a 1 pilot oficial";
+                    return "Debes mantener al menos a 1 piloto oficial";
                 }else{
                     piloto= pilotosOficiales.get(idPiloto-1).getPiloto();
                     pilotosOficiales.remove(pilotosOficiales.get(idPiloto-1));
@@ -61,10 +99,10 @@ public class Escuderia {
     }
     
     public void pagarPilotos(){
-        for (PilotoOficial p : pilotosOficiales) {
+        for (Piloto p : pilotosOficiales) {
             presupuesto -= p.getSueldo();
         }
-        for (PilotoProbador p : pilotosProbadores) {
+        for (Piloto p : pilotosProbadores) {
             presupuesto -= p.getSueldo();
         }
     }

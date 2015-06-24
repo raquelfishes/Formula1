@@ -12,6 +12,11 @@ public class PilotoProbador extends Piloto{
         sueldo = calcularSueldo();
     }
     
+    public PilotoProbador(Piloto piloto) {
+        super(piloto.getNombre(), piloto.getApellidos(), piloto.getDatosPersonales(), piloto.getCaracteristicasTecnicas());
+        sueldo = calcularSueldo();
+    }
+    
     public void mejorar(){
         caracteristicasTecnicas.mejorar((float) 0.05);
     }
