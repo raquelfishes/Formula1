@@ -50,9 +50,9 @@ class CaracteristicasTecnicasPiloto{
 public class Piloto {
     static int contador = 0;
     private int identificador;
-    private String nombre;
-    private String apellidos;
-    private DatosPersonales datosPersonales;
+    protected String nombre;
+    protected String apellidos;
+    protected DatosPersonales datosPersonales;
     private int puntosMundial;
     protected float sueldo;
     protected CaracteristicasTecnicasPiloto caracteristicasTecnicas;
@@ -136,5 +136,9 @@ public class Piloto {
     }
     public void setCaracteristicasTecnicas(CaracteristicasTecnicasPiloto c) {
         caracteristicasTecnicas = c;
+    }
+    
+    public Piloto getPiloto(){
+        return this;
     }
 }

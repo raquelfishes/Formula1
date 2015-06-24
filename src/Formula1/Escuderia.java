@@ -43,6 +43,23 @@ public class Escuderia {
         
     }
     
+    public String descartarPiloto(int idPiloto, Piloto piloto){
+            if((idPiloto > 0) && (idPiloto < pilotosOficiales.size()+1)){
+                if (pilotosOficiales.size() < 2){
+                    return "Debes mantener al menos a 1 pilot oficial";
+                }else{
+                    piloto= pilotosOficiales.get(idPiloto-1).getPiloto();
+                    pilotosOficiales.remove(pilotosOficiales.get(idPiloto-1));
+                    return "Has descartado al piloto "+piloto.getNombre();
+                }
+            }else if(idPiloto < (pilotosOficiales.size()+pilotosProbadores.size())){
+                piloto= pilotosProbadores.get(idPiloto-pilotosOficiales.size()-1).getPiloto();
+                pilotosProbadores.remove(pilotosProbadores.get(idPiloto-pilotosOficiales.size()-1));
+                return "Has descartado al piloto "+piloto.getNombre();
+            }
+            return "No existe ese identificador de Piloto";
+    }
+    
     public void pagarPilotos(){
         for (PilotoOficial p : pilotosOficiales) {
             presupuesto -= p.getSueldo();

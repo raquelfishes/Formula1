@@ -284,6 +284,19 @@ public class jpEscuderia extends javax.swing.JFrame {
                 }                   
             }
         }
+    /* Piloto */
+        // Descartar Piloto
+        else if(bDescartarPiloto.isSelected()){
+            jpPilotoEscuderia pPiloto = new jpPilotoEscuderia(id-1);
+            if(JOptionPane.showConfirmDialog(this, pPiloto, "Elige Piloto",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION) {
+                Piloto piloto=null;
+                Resultados.setText (Formula1UI.formula1.escuderias.get(id-1).descartarPiloto(pPiloto.getNumero(), piloto));
+                // Si se ha descartado con exito lo volvemos a poner en la lista de pilotos libres
+                if(piloto != null) Formula1UI.formula1.añadirPiloto(piloto);
+            }
+        }
     /*
     //Modificar Escuderia
         else if(bModificarEscuderia.isSelected()){

@@ -20,6 +20,10 @@ public class PilotoProbador extends Piloto{
         return 50 * caracteristicasTecnicas.getSumaCaracteristicas();
     }
     
+    public Piloto getPiloto(){
+        return super.getPiloto();
+    }
+    
     @Override
     public String toString() {
         return super.toString();

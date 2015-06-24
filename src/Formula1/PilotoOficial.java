@@ -21,7 +21,11 @@ public class PilotoOficial extends Piloto{
     public void mejorar() {
        caracteristicasTecnicas.mejorar((float) 0.1);
     }
-
+    
+    public Piloto getPiloto(){
+        return super.getPiloto();
+    }
+    
     @Override
     public String toString() {
         return super.toString();
