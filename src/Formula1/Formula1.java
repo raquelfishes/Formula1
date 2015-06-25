@@ -5,6 +5,7 @@
  */
 package Formula1;
 import java.io.Serializable;
+import static java.lang.Math.abs;
 import java.text.ParseException;
 import java.util.*;
 
@@ -166,5 +167,12 @@ public class Formula1 implements Serializable{
     
     public void crearMundial(){
         mundial = new Mundial(escuderias);
+        Carrera[] carreras = new Carrera[5];
+        Random rand = new Random();
+        for (int i=0; i<5; i++){
+            int r = abs(rand.nextInt());
+            carreras[i] = new Carrera(circuitos.get(r%circuitos.size()));
+        }
+        mundial.setCarreras(carreras);
     }
 }

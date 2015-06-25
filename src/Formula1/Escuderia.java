@@ -321,10 +321,11 @@ public class Escuderia implements Serializable, Comparable<Escuderia>{
     }
 
     public String mostrarInformacion() {
-        String s = "Presupuesto: "+presupuesto+"\t Puntos: "+puntosMundial+"\t Puntos de sus pilotos: \n";
+        String s = "Escuderia: " + nombre + " Presupuesto: "+presupuesto+"\t Puntos: "+puntosMundial+"\n\t Puntos de sus pilotos: \n";
         for(int i=0; i<pilotosOficiales.size(); i++){
             s += "\t" + pilotosOficiales.get(i).getNombre() + ": " + pilotosOficiales.get(i).getPuntosMundial();
         }
+        s+="\n";
         return s;
     }
 
@@ -335,6 +336,11 @@ public class Escuderia implements Serializable, Comparable<Escuderia>{
             EquipoCarrera equipo2 = new EquipoCarrera(circuito,coches.get(1),pilotosOficiales.get(1));
             equipos.add(equipo2);
         }
+    }
+    
+    public void crearEquipo(int idPiloto, int idCoche, Circuito c){
+        EquipoCarrera equipo = new EquipoCarrera(c, coches.get(idCoche), pilotosOficiales.get(idPiloto));
+        equipos.add(equipo);
     }
 
     public boolean tienePiloto(Piloto pil) {

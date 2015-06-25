@@ -438,6 +438,32 @@ public class jpEscuderia extends javax.swing.JFrame {
             Escuderia escuderia=Formula1UI.formula1.escuderias.get(id-1);
             Resultados.setText (escuderia.toString());
         }
+    /* Fichar equipo */
+        // Fichar equipo
+        else if (bElegirPilotoyCoche.isSelected()){
+            jpConsultaCircuito pCircuito = new jpConsultaCircuito();
+            if(JOptionPane.showConfirmDialog(this, pCircuito, "Elige Circuito",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+            == JOptionPane.OK_OPTION){ 
+                if((pCircuito.getNumero()> 0) && (pCircuito.getNumero()< Formula1UI.formula1.numeroCircuitos())){
+                    jpConsultaCoche pCoche = new jpConsultaCoche(id-1);
+                    if(JOptionPane.showConfirmDialog(this, pCoche, "Elige Coche",
+                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                    == JOptionPane.OK_OPTION) {
+                        jpPilotoEscuderia pPiloto = new jpPilotoEscuderia(id-1);
+                        if(JOptionPane.showConfirmDialog(this, pPiloto, "Elige Piloto",
+                        JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                        == JOptionPane.OK_OPTION) {
+                            boolean correcto = false;
+                            Formula1UI.formula1.escuderias.get(id-1).crearEquipo(pPiloto.getNumero()-1,pCoche.getId()-1,Formula1UI.formula1.circuitos.get(pCircuito.getNumero()-1));
+                            Resultados.setText ("Se ha creado el equipo para el circuito"); 
+                        }
+                    }else{
+                         Resultados.setText ("No tiene presupuesto para este circuito");   
+                    } 
+                }
+            }
+        }
 }//GEN-LAST:event_AccionActionPerformed
 
     /**

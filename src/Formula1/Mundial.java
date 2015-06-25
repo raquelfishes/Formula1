@@ -10,47 +10,47 @@ public class Mundial implements Serializable{
     private ArrayList<Escuderia> escuderias;
     private ArrayList<Piloto> pilotos;
     private Carrera[] carreras = new Carrera[5];
+    private int siguienteCarrera;
     private boolean empezado;
     
     public Mundial(ArrayList e){
         escuderias = e;
         pilotos = new ArrayList();
+        siguienteCarrera=0;
     }
     
-    public boolean empezarMundial(String mensaje){
-        boolean b = true;
+    public String empezarMundial(){
+        String mensaje = "";
+        empezado = true;
         for (Escuderia escuderia : escuderias) {
             if (escuderia.getNumCoches()==0 && escuderia.getNumOficiales()==0){
                 //No se puede inscribir la escuderia(le falta un coche o un piloto oficial)
                 mensaje += "La escuderia "+escuderia.getNombre()+" ("+escuderia.getIdentificador()+") no tiene suficientes pilotos oficiales o coches.\n";
-                b=false;
+                empezado=false;
             }
             else{
                 //Se inscribe la escuderia en el mundial
                 for (int i=0; i<carreras.length; i++){
-                    if (escuderia.getEquipoCircuito(carreras[i].getCircuito()).size() > 0){
-                        escuderias.add(escuderia);
-                    }
-                    else{
+                    if (escuderia.getEquipoCircuito(carreras[i].getCircuito()).size() == 0){
                         escuderia.crearEquipoCircuito(carreras[i].getCircuito());
-                        escuderias.add(escuderia);
                     }
                 }
             }
         }
-        if (!b)
-            return false;
+        if (!empezado){
+            return mensaje;
+        }
         mensaje = "¡El mundial URJC ha comenzado!";
-        return b;
+        return mensaje;
     }
     
-    public String empezarCarrera(int i){
+    public String empezarCarrera(){
         String s="";
         // Primero cada escuderia paga los canon y al piloto
         for (Escuderia escuderia: escuderias){
-            if (escuderia.presupuestoValor(carreras[i].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[i].getCircuito()))){
-                escuderia.pagarValor(carreras[i].getCircuito().getCanon());
-                escuderia.pagarValor(escuderia.getSueldosPilotos(carreras[i].getCircuito()));
+            if (escuderia.presupuestoValor(carreras[siguienteCarrera].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[siguienteCarrera].getCircuito()))){
+                escuderia.pagarValor(carreras[siguienteCarrera].getCircuito().getCanon());
+                escuderia.pagarValor(escuderia.getSueldosPilotos(carreras[siguienteCarrera].getCircuito()));
             }
             else{
                 s="La escuderia "+escuderia.getNombre()+ " no tiene dinero suficiente para participar en esta carrera";
@@ -58,34 +58,47 @@ public class Mundial implements Serializable{
         }
         // Segundo cada escuderia compite con sus equipos en la carrera
         for (Escuderia escuderia: escuderias){
-            if (escuderia.presupuestoValor(carreras[i].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[i].getCircuito()))){
-                for (EquipoCarrera equipo:escuderia.getEquipoCircuito(carreras[i].getCircuito()))
-                    equipo.tiempo = carreras[i].tiempoPiloto(equipo);
+            if (escuderia.presupuestoValor(carreras[siguienteCarrera].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[siguienteCarrera].getCircuito()))){
+                for (EquipoCarrera equipo:escuderia.getEquipoCircuito(carreras[siguienteCarrera].getCircuito())){
+                    equipo.tiempo = carreras[siguienteCarrera].tiempoPiloto(equipo);
+                    //Mejorar caracteristicas piloto y coche
+                    equipo.piloto.mejorar();
+                    equipo.coche.mejorar();
+                }
             }
         }
         //Rellenar clasificacion 
-        carreras[i].rellenarClasificacion(escuderias);
+        carreras[siguienteCarrera].rellenarClasificacion(escuderias);
         //mostrar informacion
         for (Escuderia escuderia: escuderias){
-            if (escuderia.presupuestoValor(carreras[i].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[i].getCircuito()))){
-                escuderia.mostrarInformacion();
+            if (escuderia.presupuestoValor(carreras[siguienteCarrera].getCircuito().getCanon()+escuderia.getSueldosPilotos(carreras[siguienteCarrera].getCircuito()))){
+                s += escuderia.mostrarInformacion()+"\n";
             }
         }
         Collections.sort(escuderias);
+        ++siguienteCarrera;
         return s;
     }
     
     public String mostrarEstadisticasMundial(){
         String s = "";
         for (int i=0; i<escuderias.size(); i++){
-            s+="Posicion: " + i + "\t" + escuderias.get(i).mostrarInformacion();
+            s+="Posicion: " + (i+1) + "\t" + escuderias.get(i).mostrarInformacion()+"\n";
         }
         return s;
     }
     
     public String mostrarEstadisticasCarrera(int i){
         String s = "";
-        carreras[i].mostrarInformacion();
+        s = carreras[i].mostrarInformacion();
+        return s;
+    }
+    
+    public String mostrarCarreras(){
+        String s = "";
+        for (int i=0; i<5; i++){
+            s += "Carrera: " + (i+1) + carreras[i].toString() + "\n";
+        }
         return s;
     }
 
@@ -96,5 +109,19 @@ public class Mundial implements Serializable{
     public void setEmpezado(boolean empezado) {
         this.empezado = empezado;
     }
+    
+    public void setCarreras(Carrera[] c){
+        carreras = c;
+    }
+
+    public int getSiguienteCarrera() {
+        return siguienteCarrera;
+    }
+
+    public void setSiguienteCarrera(int siguienteCarrera) {
+        this.siguienteCarrera = siguienteCarrera;
+    }
+    
+    
     
 }
