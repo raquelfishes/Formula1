@@ -176,7 +176,7 @@
                           <Component id="bDescartarPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="bFicharPilotoLibre" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="bFicharPilotoOtra" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="bInercambioPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bIntercambioPiloto" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -190,7 +190,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="bFicharPilotoOtra" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bInercambioPiloto" min="-2" max="-2" attributes="0"/>
+                      <Component id="bIntercambioPiloto" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -220,7 +220,7 @@
                 <Property name="text" type="java.lang.String" value="Fichar piloto de otra escuderia"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="bInercambioPiloto">
+            <Component class="javax.swing.JRadioButton" name="bIntercambioPiloto">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="Agrupados"/>

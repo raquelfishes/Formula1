@@ -36,6 +36,7 @@ public class Escuderia implements Serializable, Comparable<Escuderia>{
     final int MAX_COCHES = 2;
     final int MAX_PILOTOS_OFIC = 2;
     final int MAX_PILOTOS_PROB = 2;
+    final float PORCENTAJE = 0.1f;
     
     private int identificador;
     private String nombre;
@@ -103,8 +104,16 @@ public class Escuderia implements Serializable, Comparable<Escuderia>{
         return false;     
     }
     
-    public void intercambiarPiloto(){
-        
+    public boolean posibleCambiar(float val1,float val2){
+           return Math.abs(val1 - val2)< (val1*PORCENTAJE);  //True si la diferencia es menor que el 10 % del valor    
+    }
+    
+    public void intercambiarPiloto(PilotoOficial piloto){
+         pilotosOficiales.add(piloto);
+    }
+    
+    public void intercambiarPiloto(PilotoProbador piloto){
+         pilotosProbadores.add(piloto);
     }
     
     public String descartarPiloto(int idPiloto, Piloto piloto){

@@ -31,7 +31,7 @@ public class jpEscuderia extends javax.swing.JFrame {
         bDescartarPiloto = new javax.swing.JRadioButton();
         bFicharPilotoLibre = new javax.swing.JRadioButton();
         bFicharPilotoOtra = new javax.swing.JRadioButton();
-        bInercambioPiloto = new javax.swing.JRadioButton();
+        bIntercambioPiloto = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         bAnyadirCoche = new javax.swing.JRadioButton();
         bBorrarCoche = new javax.swing.JRadioButton();
@@ -86,8 +86,8 @@ public class jpEscuderia extends javax.swing.JFrame {
         Agrupados.add(bFicharPilotoOtra);
         bFicharPilotoOtra.setText("Fichar piloto de otra escuderia");
 
-        Agrupados.add(bInercambioPiloto);
-        bInercambioPiloto.setText("Intercambiar piloto");
+        Agrupados.add(bIntercambioPiloto);
+        bIntercambioPiloto.setText("Intercambiar piloto");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -99,7 +99,7 @@ public class jpEscuderia extends javax.swing.JFrame {
                     .addComponent(bDescartarPiloto)
                     .addComponent(bFicharPilotoLibre)
                     .addComponent(bFicharPilotoOtra)
-                    .addComponent(bInercambioPiloto)))
+                    .addComponent(bIntercambioPiloto)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +110,7 @@ public class jpEscuderia extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bFicharPilotoOtra)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bInercambioPiloto))
+                .addComponent(bIntercambioPiloto))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Coches:"));
@@ -363,6 +363,75 @@ public class jpEscuderia extends javax.swing.JFrame {
                 Resultados.setText("No hay mas escuderias");
             }
         }
+        // Cambiar piloto a otra escudería
+        else if(bIntercambioPiloto.isSelected()){
+            if((Formula1UI.formula1.numeroEscuderias() > 1) || (Formula1UI.formula1.escuderias.get(id-1).getNumPilotos() > 0)){
+                jpIntercambioPiloto pPiloto = new jpIntercambioPiloto(id);
+                if(JOptionPane.showConfirmDialog(this, pPiloto, "Cambiar por Piloto de otra escuderia",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
+                == JOptionPane.OK_OPTION) {
+                    int idPilT = pPiloto.getTraigo();
+                    int idPilC = pPiloto.getCedo();
+                    int idEsc = pPiloto.getEscuderia();
+                    if((idPilT != -1) && (idPilC != -1)){
+                        float val1;
+                        float val2;
+                        if(pPiloto.getOficial()){ 
+                            val1= Formula1UI.formula1.escuderias.get(id-1).getOficiales().get(idPilC).getCaracteristicasTecnicas().getSumaCaracteristicas();
+                        }else{
+                            val1= Formula1UI.formula1.escuderias.get(id-1).getProbadores().get(idPilC).getCaracteristicasTecnicas().getSumaCaracteristicas();
+                        }
+                        
+                        if(pPiloto.oficial()){ 
+                            val2= Formula1UI.formula1.escuderias.get(idEsc).getOficiales().get(idPilT).getCaracteristicasTecnicas().getSumaCaracteristicas();
+                        }else{
+                            val2= Formula1UI.formula1.escuderias.get(idEsc).getProbadores().get(idPilT).getCaracteristicasTecnicas().getSumaCaracteristicas();
+                        }
+                        
+                        if(Formula1UI.formula1.escuderias.get(id-1).posibleCambiar(val1,val2)){
+                            // Dicidimos si ficharlo como oficial o probador
+                            if(pPiloto.getOficial()){
+                                PilotoOficial piloto;                               
+                                    if(pPiloto.oficial()){
+                                        piloto = new PilotoOficial(Formula1UI.formula1.escuderias.get(idEsc).getOficiales().get(idPilT).getPiloto());
+                                        Formula1UI.formula1.escuderias.get(idEsc).removeOfic(idPilT);
+                                        Formula1UI.formula1.escuderias.get(idEsc).intercambiarPiloto(Formula1UI.formula1.escuderias.get(id-1).getOficiales().get(idPilC));                                 
+                                    }else{
+                                        piloto = new PilotoOficial(Formula1UI.formula1.escuderias.get(idEsc).getProbadores().get(idPilT).getPiloto());
+                                        Formula1UI.formula1.escuderias.get(idEsc).removeProb(idPilT);
+                                        PilotoProbador pilotoCedido = new PilotoProbador(Formula1UI.formula1.escuderias.get(id-1).getOficiales().get(idPilC).getPiloto());
+                                        Formula1UI.formula1.escuderias.get(idEsc).intercambiarPiloto(pilotoCedido);                                  
+                                    }
+                                    Formula1UI.formula1.escuderias.get(id-1).removeOfic(idPilC);
+                                    Formula1UI.formula1.escuderias.get(id-1).intercambiarPiloto(piloto);
+                                    Resultados.setText ("Se ha realizado el intercambio");              
+                            }else{                   
+                                PilotoProbador piloto;
+                                    if(pPiloto.oficial()){
+                                        piloto = new PilotoProbador(Formula1UI.formula1.escuderias.get(idEsc).getOficiales().get(idPilT).getPiloto());
+                                        Formula1UI.formula1.escuderias.get(idEsc).removeOfic(idPilT);
+                                        PilotoOficial pilotoCedido = new PilotoOficial(Formula1UI.formula1.escuderias.get(id-1).getProbadores().get(idPilC).getPiloto());
+                                        Formula1UI.formula1.escuderias.get(idEsc).intercambiarPiloto(pilotoCedido);                                 
+                                    }else{
+                                        piloto = new PilotoProbador(Formula1UI.formula1.escuderias.get(idEsc).getProbadores().get(idPilT).getPiloto());
+                                        Formula1UI.formula1.escuderias.get(idEsc).removeProb(idPilT);                     
+                                        Formula1UI.formula1.escuderias.get(idEsc).intercambiarPiloto(Formula1UI.formula1.escuderias.get(id-1).getProbadores().get(idPilC));                                  
+                                    }
+                                    Formula1UI.formula1.escuderias.get(id-1).removeProb(idPilC);
+                                    Formula1UI.formula1.escuderias.get(id-1).intercambiarPiloto(piloto);
+                                    Resultados.setText ("Se ha realizado el intercambio");                                                 
+                            } 
+                        }else{
+                            Resultados.setText ("No ha podido realizarse, sobrepasan el 10% de valoracion"); 
+                        }
+                    }else{               
+                        Resultados.setText("No has seleccionado un piloto");
+                    }
+                }
+            }else{
+                Resultados.setText("No hay mas escuderias o no tienes pilotos para cambiar");
+            }
+        }
     /* Escuderia */
         // Info Escuderia
         else if(bInfoEscuderia.isSelected()){
@@ -393,8 +462,8 @@ public class jpEscuderia extends javax.swing.JFrame {
     private javax.swing.JRadioButton bEntrenar;
     private javax.swing.JRadioButton bFicharPilotoLibre;
     private javax.swing.JRadioButton bFicharPilotoOtra;
-    private javax.swing.JRadioButton bInercambioPiloto;
     private javax.swing.JRadioButton bInfoEscuderia;
+    private javax.swing.JRadioButton bIntercambioPiloto;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
